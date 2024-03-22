@@ -1,4 +1,4 @@
-# Lua Repository
+# Lua Study
 
 This directory contains a simple guessing game implemented in Lua and also a file I found on the internet that shows the main concepts of Lua. Below, you'll find information about Lua, installation instructions for Windows and Linux, and how to play the guessing game.
 
