@@ -173,3 +173,74 @@ Os atributos com cardinalidade, sejam eles opcionais ou multivalorados, são adi
 No modelo conceitual apenas os atributos que fazem parte da composição aparecem dentro da entidade. O atributo base é Também existe a possibilidade de criar uma outra tabela para adicionar esse atributo, nesse caso o atributo base é utilizado para nomear a entidade.
 
 ![ATRIBUTO_COMPOSTO_2](./imgs/README/ATRIBUTO_COMPOSTO_2.png)
+
+### Tipos de Dados para os Atributos
+
+| Tipo de Dado | Descrição                                           |
+|--------------|-----------------------------------------------------|
+| **CHAR(n)**      | Campo de texto limitado, sempre preenchido à direita com espaços, com tamanho fixo n. |
+| **VARCHAR(n)**   | Campo de texto de tamanho variável, com tamanho máximo n. |
+| **INT**          | Inteiro de tamanho normal.                           |
+| **FLOAT(p)**     | Número de ponto flutuante pequeno, com precisão p.   |
+| **DOUBLE(n, p)** | Número de ponto flutuante de tamanho normal, com precisão n e p. |
+| **DECIMAL(n, p)**| Número de ponto flutuante de tamanho normal com tamanho fixo, com precisão n e p. |
+| **DATE**         | Tipo de dado para armazenar datas no formato AAAA-MM-DD. |
+| **TIME**         | Tipo de dado para armazenar horas no formato HH:NN:SS. |
+| **DATETIME**     | Combinação de data e hora separada por espaço, no formato AAAA-MM-DD HH:NN:SS. |
+| **TIMESTAMP**    | Combinação de data e hora separada por espaço, no formato AAAA-MM-DD HH:NN:SS. |
+| **ENUM('val1', 'val2', ..., 'valN')** | Enumeração de valores, aceitando um valor do tipo texto ou número inteiro. |
+| **BLOB**         | Campo para armazenar imagem ou texto muito grande, com tamanho máximo de 4294967295 ou 4GB. |
+
+```sql
+CREATE TABLE exemplo (
+    char_column CHAR(10),
+    varchar_column VARCHAR(255),
+    int_column INT,
+    float_column FLOAT(5,2),
+    double_column DOUBLE(10,4),
+    decimal_column DECIMAL(8,2),
+    date_column DATE,
+    time_column TIME,
+    datetime_column DATETIME,
+    timestamp_column TIMESTAMP,
+    enum_column ENUM('valor1', 'valor2', 'valor3'),
+    blob_column BLOB,
+    unique_column VARCHAR(50) UNIQUE,
+    not_null_column INT NOT NULL,
+    default_column INT DEFAULT 0
+);
+```
+
+### Opções: Integridade de Dados a nível de Atributo
+
+| Modificador    | Descrição                                                                                   |
+|----------------|---------------------------------------------------------------------------------------------|
+| **NOT NULL**       | Impede a inclusão de valores nulos na coluna, tornando o campo obrigatório.                  |
+| **AUTO_INCREMENT** | Gera automaticamente um número incremental para cada novo registro na coluna.                 |
+| **UNIQUE**         | Garante a unicidade dos valores em uma coluna, não permitindo a duplicação de valores.       |
+| **DEFAULT(valor)** | Define um valor padrão que será assumido na inserção de um novo registro, se não for fornecido um valor explícito para a coluna. |
+
+***Exemplo de uso:***
+
+```sql
+CREATE TABLE exemplo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    status ENUM('ativo', 'inativo') DEFAULT 'ativo'
+);
+```
+
+Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a coluna `nome` é obrigatória e não pode ser nula, a coluna `email` deve ser única em toda a tabela e a coluna `status` terá o valor padrão `'ativo'` se nenhum valor for fornecido durante a inserção de um novo registro.
+
+
+
+
+
+
+
+
+
+
+
+
