@@ -3,6 +3,20 @@
 
 Inclui comandos para definir, atlerar e remover tabelas e índices.
 
+## Principais comandos
+
+```sql
+CREATE
+```
+
+```sql
+ALTER
+```
+
+```sql
+DROP
+```
+
 ## Banco de Dados
 
 ### Criação de Banco de Dados:
