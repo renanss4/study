@@ -1,7 +1,7 @@
 
 # Linguagem de Definição de Dados (DDL)
 
-Inclui comandos para definir, atlerar e remover tabelas e índices.
+Inclui comandos para definir, alterar e remover tabelas e índices.
 
 ## Principais comandos
 
@@ -56,29 +56,22 @@ CREATE TABLE nome_da_tabela (
 
 ## Domínio ou Tipo de Dados - MySQL
 
-- **CHAR(numero_caracteres):** Campo texto limitado, sempre preenchida a direita com espaços;
+Aqui está a tabela com os tipos de dados e suas descrições:
 
-- **VARCHAR(numero_caracteres):** Campo texto de tamanho variável;
-
-- **INT:** Um inteiro de tamanho normal;
-
-- **FLOAT(precisão):** Um número de ponto flutuante pequeno;
-
-- **DOUBLE(tamanho, precisão):** Um número de ponto flutuante de tamanho normal;
-
-- **DECIMAL(tamanho, precisão):** Um número de ponto flutuante de tamanho normal com tamanho fixo;
-
-- **DATE:** Tipo para data, no formato AAAA-MM-DD;
-
-- **TIME:** Uma para hora, no formato HH:NN:SS;
-
-- **DATETIME:** Um combinação de hora e data separado por espaço, no formato AAAA-MM-DD HH:NN:SS;
-
-- **TIMESTAMP:** Um combinação de hora e data separado por espaço, no formato AAAA-MM-DD HH:NN:SS;
-
-- **ENUM('valor1', 'valor2', ..., valorN):** Uma enumeração. Um valor do tipo texto ou número inteiro;
-
-- **BLOB:** Um campo para imagem ou texto muito grande com tamanho máximo de 4294967295 ou 4G.
+| Tipo de Dado | Descrição                                           |
+|--------------|-----------------------------------------------------|
+| **CHAR(n)**      | Campo texto limitado, sempre preenchido à direita com espaços, com tamanho fixo n. |
+| **VARCHAR(n)**   | Campo texto de tamanho variável, com tamanho máximo n. |
+| **INT**          | Inteiro de tamanho normal.                           |
+| **FLOAT(p)**     | Número de ponto flutuante pequeno, com precisão p.   |
+| **DOUBLE(n, p)** | Número de ponto flutuante de tamanho normal, com precisão n e p. |
+| **DECIMAL(n, p)**| Número de ponto flutuante de tamanho normal com tamanho fixo, com precisão n e p. |
+| **DATE**         | Tipo de dado para armazenar datas no formato AAAA-MM-DD. |
+| **TIME**         | Tipo de dado para armazenar horas no formato HH:NN:SS. |
+| **DATETIME**     | Combinação de data e hora no formato AAAA-MM-DD HH:NN:SS. |
+| **TIMESTAMP**    | Combinação de data e hora no formato AAAA-MM-DD HH:NN:SS. |
+| **ENUM('val1', 'val2', ..., 'valN')** | Enumeração de valores, aceitando um valor do tipo texto ou número inteiro. |
+| **BLOB**         | Campo para armazenar imagem ou texto muito grande, com tamanho máximo de 4294967295 ou 4GB. |
 
 ## Integridade de dados a nível de campo ou atributo
 
@@ -162,7 +155,7 @@ CREATE TABLE aluno (
 );
 ```
 
-#### **ZEROFILL:** Preenche espaços vazios da coluna com o número zero.
+### **ZEROFILL:** Preenche espaços vazios da coluna com o número zero.
 
 ```sql
 CREATE TABLE nome_da_tabela (
@@ -182,7 +175,7 @@ CREATE TABLE conta(
 
 Temos dois tipos de chaves primárias:
 
-**Simples:** É formada por apenas um campo da tabela;
+**Simples:** É formada por apenas um campo da tabela.
 
 **Composta:** Composta por dois ou mais campos da tabela.
 
@@ -291,7 +284,7 @@ ALTER TABLE aluno
 DROP COLUMN endereco;
 ```
 
-Caso o campo seja utilizado em um indice ou chave, não será permitido a remoção;
+Caso o campo seja utilizado em um índice ou chave, não será permitido a remoção.
 
 ## Adicionar uma chave primária em um campo já existente
 
@@ -307,7 +300,7 @@ ALTER TABLE aluno
 ADD PRIMARY KEY (aluno);
 ```
 
-Adicionar uma chave estrangeira em um campo já existente
+Adicionar uma chave estrangeira em um campo já existente.
 
 ```sql
 ALTER TABLE nome_tabela 
@@ -335,6 +328,4 @@ DROP TABLE nome_tabela;
 DROP TABLE aluno;
 ```
 
-> **Caso a tabela seja utilizada em um relacionamento, não será permitido a remoção!**
-
----
+Caso a tabela seja utilizada em um relacionamento, não será permitido a remoção!
