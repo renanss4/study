@@ -233,3 +233,17 @@ SELECT * FROM CLIENTE ORDER BY NOME LIMIT 4,3
 ```
 
 ![DML_ORDER_BY_LIMIT_INI_FIM](./imgs/DML/DML_ORDER_BY_LIMIT_INI_FIM.png)
+
+## Pseudônimos para Tabelas e Campos
+
+Podemos criar pseudônimos para os nomes das tabelas assim fica mais fácil fazer referência. O mesmo pode acontecer com o nome das colunas.
+
+Para isso devemos utilizar a palavra reservada “AS” logo após o nome da tabela ou o nome da coluna. Pseudônimos para tabelas também são chamados de nomes correlacionais
+
+***Exemplo:***
+
+```sql
+SELECT NOME AS NM, IDADE FROM CLIENTE AS CL;
+```
+
+![DML_AS](./imgs/DML/DML_AS.png)
