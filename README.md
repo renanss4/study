@@ -64,8 +64,6 @@ sudo mysql -u root -p
 
 - **[DTL:](docs/DTL.md)** Linguagem de Transação de Dados.
 
----
-
 ## Um pouco de história - Modelagem de Dados
 
 Um modelo de dados é uma descrição dos tipos de informações que estão armazenadas em um banco de dados.
@@ -146,7 +144,7 @@ O atributo composto é formado por um atributo base que da nome ao atributo, seg
 
 ![ATRIBUTO_COMPOSTO](./imgs/README/ATRIBUTO_COMPOSTO.png)
 
-## Modelage Lógica/Física
+## Modelagem Lógica/Física
 
 O modelo lógico é o resultado ou produto da conversão de um modelo conceitual para um determinado tipo de banco de dados, ou seja, nível de abstração visto pelo usuário do sistema gerenciador de banco de dados.
 
@@ -233,14 +231,4 @@ CREATE TABLE exemplo (
 
 Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a coluna `nome` é obrigatória e não pode ser nula, a coluna `email` deve ser única em toda a tabela e a coluna `status` terá o valor padrão `'ativo'` se nenhum valor for fornecido durante a inserção de um novo registro.
 
-
-
-
-
-
-
-
-
-
-
-
+## Relacionamento
