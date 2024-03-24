@@ -15,6 +15,7 @@ Lua is usually available in the package repositories of most Linux distributions
 ```bash
 sudo apt-get install lua5.3
 ```
+---
 
 ## How to Play the Guessing Game
 
