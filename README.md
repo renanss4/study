@@ -4,15 +4,15 @@ SQL (Structured Query Language) é uma linguagem de programação utilizada para
 
 ## Funcionalidades principais:
 
-- **[DDL:](daily/DDL.md)** Linguagem de Definição de Dados;
+- **[DDL:](docs/DDL.md)** Linguagem de Definição de Dados;
 
-- **[DML:](daily/DML.md)** Linguagem de Manipulação de Dados;
+- **[DML:](docs/DML.md)** Linguagem de Manipulação de Dados;
 
-- **[DQL:](daily/DQL.md)** Linguagem de Consulta de Dados;
+- **[DQL:](docs/DQL.md)** Linguagem de Consulta de Dados;
 
-- **[DCL:](daily/DCL.md)** Linguagem de Controle de Dados;
+- **[DCL:](docs/DCL.md)** Linguagem de Controle de Dados;
 
-- **[DTL:](daily/DTL.md)** Linguagem de Transação de Dados.
+- **[DTL:](docs/DTL.md)** Linguagem de Transação de Dados.
 
 ## Diagramas entidade relacionamento (DER)
 
