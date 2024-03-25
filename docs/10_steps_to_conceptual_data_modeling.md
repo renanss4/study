@@ -2,62 +2,62 @@
 
 ![MAGAZINE](../imgs/DOC_IMAGES/10_STEPS/MAGAZINE.png)
 
-Baseado no Artigo SQL Magazine 16 - 10 passos para a criação de um modelo conceitual de banco de banco de dados.
+Based on the SQL Magazine Article 16 - 10 steps to creating a conceptual database model.
 
-Antes de iniciar as considerações sobre nosso processo de elaboração do modelo conceitual é necessário termos conhecimento do seguinte:
+Before we delve into considerations about our conceptual model creation process, it is necessary to have knowledge of the following:
 
-**Substantivos** que designam alguém (fornecedor, cliente, funcionário, aluno), documentos (nota fiscal, pedido, conta corrente, estoque) ou ainda coisas (peça, produto) representam objetos do mundo real que podem vir a fazer parte do modelo conceitual. 
+**Nouns** that designate someone (supplier, customer, employee, student), documents (invoice, order, current account, inventory) or even things (part, product) represent objects from the real world that may become part of the conceptual model.
 
-**Verbos** e **preposições** por sua vez servem para que identifiquemos o relacionamento entre as entidades, pois demonstram as ligações existentes entre elas. Por exemplo, quando lemos em um texto a frase “Listar empregados por departamento” concluímos que a entidade “empregado” tem um tipo de relacionamento que podemos chamar de “trabalha no” com a entidade departamento.
+**Verbs** and **prepositions**, on the other hand, serve to identify the relationship between entities, as they demonstrate the connections between them. For example, when we read in a text the phrase "List employees by department," we conclude that the entity "employee" has a type of relationship we can call "works in" with the department entity.
 
-Vale ressaltar aqui que nem todos os objetos citados nos requisitos farão parte do modelo e para separá-los podemos utilizar algumas regras simples das quais falaremos abaixo.
+It is worth noting here that not all objects mentioned in the requirements will be part of the model, and to separate them we can use some simple rules which we will discuss below.
 
-## Passo 1
+## Step 1
 
-Identificando todos os substantivos que designem objetos
+Identifying all nouns that designate objects.
 
-## Passo 2:
+## Step 2:
 
-Descartando substantivos que como entidade teriam apenas uma ocorrência
+Discarding nouns that as entities would have only one occurrence.
 
-Pergunta: **Se esse substantivo for transformado em entidade será um conjunto de apenas uma ocorrência?**
+Question: **If this noun were transformed into an entity, would it be a set of only one occurrence?**
 
-## Passo 3:
+## Step 3:
 
-Descartando substantivos que servem apenas para entendimento do problema
+Discarding nouns that serve only to understand the problem.
 
-Pergunta: **Preciso guardar informações sobre esse objeto?**
+Question: **Do I need to store information about this object?**
 
-## Passo 4:
+## Step 4:
 
-Descartando objetos que são referência a uma futura aplicação
+Discarding objects that refer to a future application.
 
-## Passo 5:
+## Step 5:
 
-Descartando substantivos que se transformados em entidade teriam apenas um atributo
+Discarding nouns that if transformed into entities would have only one attribute.
 
-Pergunta: **Se essa entidade vier a ser uma tabela, quantas colunas teria?**
+Question: **If this entity were to become a table, how many columns would it have?**
 
-## Passo 6:
+## Step 6:
 
-Listando os substantivos que se tornarão entidades
+Listing the nouns that will become entities.
 
-## Passo 7:
+## Step 7:
 
-Identificando os relacionamentos físicos e definindo seus tipos através de verbos ou preposições que demonstrem relações de dependência ou existência entre as entidades
+Identifying the physical relationships and defining their types through verbs or prepositions that demonstrate relationships of dependence or existence between the entities.
 
-## Passo 8:
+## Step 8:
 
-Estabelecendo o grau de relacionamento entre as entidades
+Establishing the degree of relationship between the entities.
 
-![10STEPS_RELACIONAMENTO](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
+![10STEPS_RELATIONSHIP](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
 
-## Passo 9:
+## Step 9:
 
-Estabelecendo a razão da cardinalidade do relacionamento entre as entidades
+Establishing the cardinality ratio of the relationship between entities.
 
-![MODO_LEITURA](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
+![READING_MODE](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
 
-## Passo 10:
+## Step 10:
 
-Identificando os atributos de cada entidade
+Identifying the attributes of each entity.
