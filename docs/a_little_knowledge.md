@@ -2,51 +2,57 @@
 
 Aqui você encontrá conceitos de relacionamentos, chaves primárias, chaves estrangeiras, cardinalidade e transformações.
 
-## Modelagem de Dados
+## Banco de dados
 
-Um modelo de dados é uma descrição dos tipos de informações que estão armazenadas em um banco de dados.
+Um banco de dados é um conjunto organizado de informações inter-relacionadas, projetado para atender às necessidades de uma comunidade de usuários, oferecendo acesso e manipulação eficientes dos dados.
 
-Dentre as técnicas utilizadas para construção dos modelos utiliza-se “linguagem de modelagem de dados”, que podem ser gráficas ou textuais.
-
-A técnica de modelagem de dados mais difundida e utilizada é a abordagem entidade-relacionamento (ER). Nesta técnica, o modelo de dados é representado através de um modelo entidade-relacionamento (MER). Usualmente, um MER é representado graficamente, através de um diagrama entidade-relacionamento (DER). 
-
-A abordagem ER foi criada em 1976 por Peter Chen. Ela pode ser considerada como um padrão de fato para modelagem conceitual.
-
-Mesmo as técnicas de modelagem orientada a objetos que têm surgido nos últimos anos baseiam-se nos conceitos da abordagem ER.
-
-A maior dificuldade para o aprendizado das técnicas de modelagem em banco de dados é entender um problema do mundo real e converte-lo, criando uma solução.
-
-O profissional da área de informática precisa entender o problema e conceituar o que será a solução e, para isso, duas coisas podem ser consideradas imprescindíveis: 
-
-Saber ouvir o cliente/usuário abstraindo da conversa o que é realmente útil para implementar a solução;
-
-Conhecer as técnicas de modelagem a fim de representar o problema de forma conceitual antes de iniciar a implementação.
-
-![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
+## SGBD
 
 SGBD (Sistema de Gerenciamento de Banco de Dados) é um software que gerencia o armazenamento, organização e acesso a dados. Exemplos incluem MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL e MongoDB.
 
+## Modelagem de Banco de Dados
+
+Modelagem de Banco de Dados é o processo de analisar as informações presentes em um determinado contexto, com o objetivo de construir um modelo que represente e compreenda esse contexto. O propósito fundamental de um modelo de dados é garantir que todos os objetos de dados necessários para a aplicação e para o banco de dados estejam representados com precisão e abrangência.
+
+## Modelagem de Dados
+
+Modelagem de Dados é o processo de descrever os tipos de informações armazenadas em um banco de dados. Para construir essas descrições, usamos linguagens de modelagem de dados, que podem ser gráficas ou textuais.
+
+A técnica mais comum de modelagem é a abordagem Entidade-Relacionamento (ER), desenvolvida por Peter Chen em 1976. Nesse método, usamos um Modelo Entidade-Relacionamento (MER), representado graficamente por um Diagrama Entidade-Relacionamento (DER). A abordagem ER é amplamente usada e serve como base até mesmo para técnicas mais recentes, como a modelagem orientada a objetos.
+
+O maior desafio da modelagem de dados é entender um problema do mundo real e transformá-lo em uma solução viável. Para isso, é essencial que o profissional de informática saiba ouvir o cliente ou usuário, identificando o que é realmente necessário para a implementação. Além disso, é fundamental dominar as técnicas de modelagem para representar o problema de forma conceitual antes de iniciar a implementação.
+
+![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
+
 ### Resumo
 
-Um Banco de Dados contém Tabelas;
-
-A Tabela é a estrutura interna de um Banco de Dados, essa estrutura contém Dados;
-
-Uma Tabela é formada por Linhas e Colunas;
-
-Cada Coluna é referente a uma Categoria de Dados de uma Tabela, também pode ser denominado Campo; 
-
-Um Linha é denominado como Registro e contém todos os dados sobre um objeto a qual é representado pela Tabela.
+- Um Banco de Dados consiste em Tabelas.
+  
+- Uma Tabela é a estrutura interna de um Banco de Dados, composta por Dados.
+  
+- As Tabelas são compostas por Linhas e Colunas.
+  
+- Cada Coluna representa uma Categoria de Dados na Tabela, também conhecida como Campo.
+  
+- Cada Linha, chamada de Registro, contém os dados completos de um objeto representado pela Tabela.
 
 ### DER e Notações
 
-- Notação de Peter Pin-Shan Chen (modelo conceitual)
+No contexto de Diagramas Entidade-Relacionamento (DER), diferentes notações são utilizadas para representar modelos conceituais e físicos de bancos de dados. Aqui estão algumas delas:
 
-- Notação de Carlos Alberto Hauser (modelo conceitual)
+- **Notação de Peter Pin-Shan Chen (modelo conceitual):**
+  - Desenvolvida por Peter Pin-Shan Chen, esta notação é amplamente usada para representar modelos conceituais. Ela inclui símbolos para entidades, relacionamentos, atributos e cardinalidade.
 
-- Notação de James Martin (modelo físico)
+- **Notação de Carlos Alberto Hauser (modelo conceitual):**
+  - Carlos Alberto Hauser desenvolveu uma notação semelhante à de Chen para modelagem conceitual. Ela também inclui símbolos para entidades, relacionamentos e atributos, com ênfase na clareza e na simplicidade.
 
-- Notação de Charles Willian Bachman (modelo físico)
+- **Notação de James Martin (modelo físico):**
+  - Utilizada para representar modelos físicos de bancos de dados, a notação de James Martin é mais detalhada e focada em aspectos de implementação. Ela inclui símbolos para tabelas, chaves primárias, chaves estrangeiras e outros elementos físicos do banco de dados.
+
+- **Notação de Charles Willian Bachman (modelo físico):**
+  - Desenvolvida por Charles Willian Bachman, esta notação é outra abordagem para representar modelos físicos de bancos de dados. Ela se concentra em aspectos como estruturas de dados, relacionamentos e restrições de integridade.
+
+Cada uma dessas notações tem suas próprias convenções e símbolos específicos, projetados para atender às necessidades de modelagem em diferentes estágios do desenvolvimento de bancos de dados.
 
 ## Modelagem Conceitual
 
@@ -54,39 +60,39 @@ Um Linha é denominado como Registro e contém todos os dados sobre um objeto a 
 
 ### Entidade
 
-Uma entidade representa, no modelo conceitual, um conjunto de objetos da realidade modelada.
+Uma entidade representa um conjunto de objetos do mundo real no modelo conceitual.
 
 ![ENTIDADE](../imgs/DOC_IMAGES/ENTIDADE.png)
 
 ### Atributo
 
-Atributo é igual ao espaço reservado para receber dado a cada ocorrência de uma entidade ou de um relacionamento. Cada atributo representam a informação associada.
+Um atributo é um espaço reservado para armazenar dados em cada ocorrência de uma entidade ou relacionamento. Cada atributo representa uma informação associada.
 
 ![ATRIBUTO](../imgs/DOC_IMAGES/ATRIBUTO.png)
 
 ### Identificador
 
-Cada entidade deve possuir um identificador. Um identificador é um conjunto de um ou mais atributos cujos valores servem para distinguir uma ocorrência da entidade das demais ocorrências da mesma entidade.
+Toda entidade deve ter um identificador, que é um conjunto de um ou mais atributos cujos valores diferenciam uma ocorrência da entidade das outras.
 
 ![IDENTIFICADOR](../imgs/DOC_IMAGES/IDENTIFICADOR.png)
 
 ### Atributo com Cardinalidade
 
-A cardinalidade de um atributo define quantos valores deste atributo podem estar associados a uma ocorrência da entidade/relacionamento a qual ele pertence Esse atributo é representado por um par de valor, no qual o primeiro valor é a cardinalidade mínima e o segundo valor a cardinalidade máxima. Temos o atributo opcional quando a cardinalidade mínima é 0 (Zero) e/ou atributo multivalorado quando a cardinalidade máxima é N.
+A cardinalidade de um atributo define quantos valores desse atributo podem estar associados a uma ocorrência da entidade/relacionamento ao qual pertence. É representada por um par de valores, em que o primeiro é a cardinalidade mínima e o segundo é a cardinalidade máxima. Um atributo é opcional quando a cardinalidade mínima é 0 (zero) e/ou multivalorado quando a cardinalidade máxima é N.
 
 ![ATRIBUTO_CARDINALIDADE](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE.png)
 
 ### Atributo Composto
 
-O atributo composto é formado por um atributo base que da nome ao atributo, seguido dos atributos que fazem parte da sua composição. O numero máximo de níveis é 1 (um), ou seja, não é correto criar um atributo composto por outro atributo composto.
+Um atributo composto é formado por um atributo base, que dá nome ao atributo, seguido dos atributos que compõem sua estrutura. O número máximo de níveis é 1 (um), ou seja, não é permitido criar um atributo composto por outro atributo composto.
 
 ![ATRIBUTO_COMPOSTO](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO.png)
 
 ## Modelagem Lógica/Física
 
-O modelo lógico é o resultado ou produto da conversão de um modelo conceitual para um determinado tipo de banco de dados, ou seja, nível de abstração visto pelo usuário do sistema gerenciador de banco de dados.
+O modelo lógico é a representação resultante da conversão de um modelo conceitual para um tipo específico de banco de dados, sendo o nível de abstração visto pelo usuário do sistema de gerenciamento de banco de dados (SGBD).
 
-O modelo físico é o resultado ou produto da conversão de um modelo lógico para um modelo direcionado a um SGDB específico, ou seja uma representação do modelo de acordo com as características do SGDB escolhido.
+O modelo físico é a representação resultante da conversão de um modelo lógico para um modelo direcionado a um SGBD específico, ou seja, é uma representação do modelo de acordo com as características do SGBD escolhido.
 
 ![CONCEITUAL_LOGICO](../imgs/DOC_IMAGES/CONCEITUAL_LOGICO.png)
 
@@ -94,19 +100,19 @@ O modelo físico é o resultado ou produto da conversão de um modelo lógico pa
 
 ### Atributo com Identificador
 
-No modelo lógico o atributo identificador é identificado como a Chave primária da tabela (entidade). É representando do símbolo de uma chave dourada na frente do nome do atributo, ou também pode ser indicado pelo prefixo “PK”.
+No modelo lógico, o atributo identificador é representado como a Chave Primária da tabela (entidade). Ele é indicado pelo símbolo de uma chave dourada na frente do nome do atributo ou pelo prefixo "PK".
 
 ![ATRIBUTO_IDENTIFICADOR](../imgs/DOC_IMAGES/ATRIBUTO_IDENTIFICADOR.png)
 
 ### Atributo com Cardinalidade
 
-Os atributos com cardinalidade, sejam eles opcionais ou multivalorados, são adicionados na entidade conforme a quantidade expressa na cardinalidade máxima. Também existe a possibilidade de criar uma outra tabela para adicionar esse atributo.
+Os atributos com cardinalidade, sejam eles opcionais ou multivalorados, são adicionados à entidade de acordo com a quantidade expressa na cardinalidade máxima. Em alguns casos, pode ser necessário criar outra tabela para adicionar esse atributo, especialmente se a cardinalidade máxima for maior que 1 e houver a necessidade de manter a integridade e normalização dos dados.
 
 ![ATRIBUTO_CARDINALIDADE_2](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE_2.png)
 
 ### Atributo Composto
 
-No modelo conceitual apenas os atributos que fazem parte da composição aparecem dentro da entidade. O atributo base é Também existe a possibilidade de criar uma outra tabela para adicionar esse atributo, nesse caso o atributo base é utilizado para nomear a entidade.
+No modelo conceitual, apenas os atributos que fazem parte da composição aparecem dentro da entidade. O atributo base é usado para nomear a entidade. Em alguns casos, pode ser necessário criar outra tabela para adicionar esse atributo, especialmente se a estrutura do atributo composto for complexa ou se houver a necessidade de manter a integridade e normalização dos dados.
 
 ![ATRIBUTO_COMPOSTO_2](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO_2.png)
 
@@ -173,37 +179,39 @@ Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a colun
 
 ## Relacionamento
 
-<!-- ### Conceitos e Símbolos  -->
+![RELACAO](../imgs/DOC_IMAGES/RELACAO.png)
 
 ### Tipos de Relação
 
 ![TIPOS_RELACAO](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
 
-Além de especificar os objetos sobre os quais deseja-se manter informações, uma das propriedades sobre as quais pode ser desejável manter informações é a associação entre objetos.
+Além de especificar os objetos sobre os quais se deseja manter informações, é importante também definir as associações entre esses objetos. Existem diferentes tipos de relações que podem ocorrer em um modelo de banco de dados:
 
-![RELACAO](../imgs/DOC_IMAGES/RELACAO.png)
+- **Um para Um (1:1)**: Cada ocorrência de uma entidade está associada a no máximo uma ocorrência de outra entidade, e vice-versa.
 
-![RELACAO_2](../imgs/DOC_IMAGES/RELACAO_2.png)
+- **Um para Muitos (1:N)**: Cada ocorrência de uma entidade está associada a uma ou mais ocorrências de outra entidade, mas cada ocorrência desta última está associada a no máximo uma ocorrência da primeira.
+
+- **Muitos para Muitos (N:M)**: Cada ocorrência de uma entidade pode estar associada a várias ocorrências de outra entidade e vice-versa.
+
+Esses tipos de relações ajudam a definir como os dados estão interconectados no banco de dados e são fundamentais para o projeto e a estruturação adequada do sistema de banco de dados.
 
 ### Cardinalidade
 
-Para fins de projeto de banco de dados, uma propriedade importante de um relacionamento é a de quantas ocorrências de uma entidade podem estar associadas a uma determinada ocorrência através do relacionamento. 
-Esta propriedade é chamada de cardinalidade de uma entidade em um relacionamento.
-Há duas cardinalidades a considerar: a **cardinalidade máxima** e a **cardinalidade mínima**.
+Ao projetar um banco de dados, uma propriedade crucial de um relacionamento é quantas ocorrências de uma entidade podem estar associadas a uma determinada ocorrência por meio desse relacionamento. Essa propriedade é conhecida como cardinalidade de uma entidade em um relacionamento.
 	
 #### Cardinalidade Mínima
 
-Uma outra informação que pode ser representada por um modelo ER é o número mínimo de ocorrências de entidade que são associadas a uma ocorrência de uma entidade através de um relacionamento.
+A cardinalidade mínima refere-se ao número mínimo de ocorrências de uma entidade que podem estar associadas a uma ocorrência de outra entidade por meio de um relacionamento.
 
-Podemos classificar os relacionamentos em:
+Podemos classificar os relacionamentos da seguinte forma:
 
 ![CARDINALIDADE_MINIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MINIMA.png)
 
 #### Cardinalidade Máxima
 
-A cardinalidade máxima pode ser usada para classificar relacionamentos binários. Um relacionamento binário é aquele cujas ocorrências envolvem duas entidades, como todos vistos até aqui. 
+A cardinalidade máxima é usada para classificar relacionamentos binários, onde as ocorrências envolvem duas entidades.
 
-Podemos classificar os relacionamentos em:
+Podemos classificar os relacionamentos da seguinte forma:
 
 ![CARDINALIDADE_MAXIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MAXIMA.png)
 
@@ -215,35 +223,35 @@ Podemos classificar os relacionamentos em:
 
 ![CARDINALIDADE_REPRESENTACAO_2](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
 
-> “Um modelo lógico é uma descrição de um banco de dados no nível de abstração visto pelo usuário do sistema gerenciador de banco de dados.”
+> "Um modelo lógico é uma descrição de um banco de dados no nível de abstração visto pelo usuário do sistema de gerenciamento de banco de dados."
 
 ## Conceito de Chave
 
-O conceito básico para estabelecer relações entre linhas de tabelas de um banco de dados relacional é o da chave. 
+O conceito fundamental para estabelecer relações entre linhas de tabelas em um banco de dados relacional é o da chave.
 
-- **Chave primária Simples / Compostas :** apenas uma coluna ou a combinação de duas ou mais colunas (Origem do Identificador);
+- **Chave primária Simples / Compostas :** Pode ser uma única coluna ou a combinação de duas ou mais colunas, e é responsável por identificar exclusivamente cada linha na tabela. É a origem do identificador único para cada registro.
 
     ![CHAVE_PRIMARIA_SIMPLES](../imgs/DOC_IMAGES/CHAVE_PRIMARIA_SIMPLES.png)
 
-- **Chave estrangeira:** A existência de uma chave estrangeira impõe restrições que devem ser garantidas em diversas situações (Origem do Relacionamento);
+- **Chave estrangeira:** Representa uma coluna ou conjunto de colunas em uma tabela que referenciam a chave primária de outra tabela. Estabelece relacionamentos entre tabelas e garante a integridade referencial no banco de dados. É a origem do relacionamento entre as tabelas.
 
     ![CHAVE_ESTRANGEIRA](../imgs/DOC_IMAGES/CHAVE_ESTRANGEIRA.png)
 
-- **Chave alternativa:** Em alguns casos, os valores de uma coluna não pode ser repetidos, mesmo essa coluna não fazendo parte de uma chave primária, assim temos as chaves alternativas.
+- **Chave alternativa:** Em certos casos, os valores de uma coluna não podem ser repetidos, mesmo que essa coluna não faça parte da chave primária. Essas colunas são conhecidas como chaves alternativas.
 
 ### Transformação
 
-A transformação é em função da cardinalidade máxima usada para classificar relacionamentos binários.
+A transformação ocorre em função da cardinalidade máxima usada para classificar relacionamentos binários.
 
 ![TRANSFORMACAO](../imgs/DOC_IMAGES/TRANSFORMACAO.png)
 
-O produto da transformação do relacionamento na modelagem lógica está dividido em :
+O resultado da transformação do relacionamento na modelagem lógica pode ser dividido em:
 
-- **Tabela própria:** O relacionamento vira uma nota entidade (tabela) recebendo o identificador das duas tabelas que fazer parte do relacionamento, tornando-se chave primária;
+- **Tabela Própria:** O relacionamento se torna uma nova entidade (tabela), recebendo como identificador as chaves primárias das duas tabelas que participam do relacionamento.
 
-- **Adição de Coluna:** A entidade de maior cardinalidade máxima recebe o identificador da entidade de menor cardinalidade máxima;
+- **Adição de Coluna:** A entidade com maior cardinalidade máxima recebe como uma coluna adicional o identificador da entidade com menor cardinalidade máxima.
 
-- **Fusão de Tabela:** As duas entidade se tornam apenas uma e some o relacionamento;
+- **Fusão de Tabelas:** As duas entidades se fundem em uma única tabela e o relacionamento é representado diretamente nela.
 
 #### Relacionamentos 1:1 (Conceitual)
 
