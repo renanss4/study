@@ -64,6 +64,9 @@ sudo mysql -u root -p
 
 - **[DTL:](docs/DTL.md)** Linguagem de Transação de Dados.
 
+<!-- --- -->
+<!-- </br></br></br></br></br></br></br></br></br></br></br> -->
+
 ## Um pouco de história - Modelagem de Dados
 
 Um modelo de dados é uma descrição dos tipos de informações que estão armazenadas em um banco de dados.
@@ -232,3 +235,61 @@ CREATE TABLE exemplo (
 Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a coluna `nome` é obrigatória e não pode ser nula, a coluna `email` deve ser única em toda a tabela e a coluna `status` terá o valor padrão `'ativo'` se nenhum valor for fornecido durante a inserção de um novo registro.
 
 ## Relacionamento
+
+<!-- ### Conceitos e Símbolos  -->
+
+### Tipos de Relação
+
+![TIPOS_RELACAO](./imgs/README/TIPOS_RELACAO.png)
+
+Além de especificar os objetos sobre os quais deseja-se manter informações, uma das propriedades sobre as quais pode ser desejável manter informações é a associação entre objetos.
+
+![RELACAO](./imgs/README/RELACAO.png)
+
+![RELACAO_2](./imgs/README/RELACAO_2.png)
+
+### Cardinalidade
+
+Para fins de projeto de banco de dados, uma propriedade importante de um relacionamento é a de quantas ocorrências de uma entidade podem estar associadas a uma determinada ocorrência através do relacionamento. 
+Esta propriedade é chamada de cardinalidade de uma entidade em um relacionamento.
+Há duas cardinalidades a considerar: a **cardinalidade máxima** e a **cardinalidade mínima**.
+	
+#### Cardinalidade Mínima
+
+Uma outra informação que pode ser representada por um modelo ER é o número mínimo de ocorrências de entidade que são associadas a uma ocorrência de uma entidade através de um relacionamento.
+
+Podemos classificar os relacionamentos em:
+
+![CARDINALIDADE_MINIMA](./imgs/README/CARDINALIDADE_MINIMA.png)
+
+#### Cardinalidade Máxima
+
+A cardinalidade máxima pode ser usada para classificar relacionamentos binários. Um relacionamento binário é aquele cujas ocorrências envolvem duas entidades, como todos vistos até aqui. 
+
+Podemos classificar os relacionamentos em:
+
+![CARDINALIDADE_MAXIMA](./imgs/README/CARDINALIDADE_MAXIMA.png)
+
+### Cardinalidade Representação
+
+![CARDINALIDADE_REPRESENTACAO](./imgs/README/CARDINALIDADE_REPRESENTACAO.png)
+
+### Sentido de Leitura
+
+![CARDINALIDADE_REPRESENTACAO_2](./imgs/README/CARDINALIDADE_REPRESENTACAO_2.png)
+
+> “Um modelo lógico é uma descrição de um banco de dados no nível de abstração visto pelo usuário do sistema gerenciador de banco de dados”
+
+### Conceito de Chave
+
+O conceito básico para estabelecer relações entre linhas de tabelas de um banco de dados relacional é o da chave. 
+
+- **Chave primária Simples / Compostas :** apenas uma coluna ou a combinação de duas ou mais colunas (Origem do Identificador);
+
+    ![CHAVE_PRIMARIA_SIMPLES](./imgs/README/CHAVE_PRIMARIA_SIMPLES.png)
+
+- **Chave estrangeira:** A existência de uma chave estrangeira impõe restrições que devem ser garantidas em diversas situações (Origem do Relacionamento);
+
+    ![CHAVE_ESTRANGEIRA](./imgs/README/CHAVE_ESTRANGEIRA.png)
+
+- **Chave alternativa:** Em alguns casos, os valores de uma coluna não pode ser repetidos, mesmo essa coluna não fazendo parte de uma chave primária, assim temos as chaves alternativas.
