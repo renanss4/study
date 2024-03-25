@@ -1,142 +1,142 @@
 # A Little Knowledge (maybe)
 
-Aqui você encontrá conceitos de relacionamentos, chaves primárias, chaves estrangeiras, cardinalidade e transformações.
+Here you will find concepts of relationships, primary keys, foreign keys, cardinality, and transformations.
 
-## Banco de dados
+## Database
 
-Um banco de dados é um conjunto organizado de informações inter-relacionadas, projetado para atender às necessidades de uma comunidade de usuários, oferecendo acesso e manipulação eficientes dos dados.
+A database is an organized collection of interrelated information designed to meet the needs of a community of users, offering efficient access and manipulation of data.
 
-## SGBD
+## Database Management System (DBMS)
 
-SGBD (Sistema de Gerenciamento de Banco de Dados) é um software que gerencia o armazenamento, organização e acesso a dados. Exemplos incluem MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL e MongoDB.
+A Database Management System (DBMS) is software that manages the storage, organization, and access to data. Examples include MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL, and MongoDB.
 
-## Modelagem de Banco de Dados
+## Database Modeling
 
-Modelagem de Banco de Dados é o processo de analisar as informações presentes em um determinado contexto, com o objetivo de construir um modelo que represente e compreenda esse contexto. O propósito fundamental de um modelo de dados é garantir que todos os objetos de dados necessários para a aplicação e para o banco de dados estejam representados com precisão e abrangência.
+Database modeling is the process of analyzing information within a specific context with the aim of constructing a model that represents and comprehends this context. The fundamental purpose of a data model is to ensure that all necessary data objects for the application and for the database are accurately and comprehensively represented.
 
-## Modelagem de Dados
+## Data Modeling
 
-Modelagem de Dados é o processo de descrever os tipos de informações armazenadas em um banco de dados. Para construir essas descrições, usamos linguagens de modelagem de dados, que podem ser gráficas ou textuais.
+Data modeling is the process of describing the types of information stored in a database. To build these descriptions, we use data modeling languages, which can be graphical or textual.
 
-A técnica mais comum de modelagem é a abordagem Entidade-Relacionamento (ER), desenvolvida por Peter Chen em 1976. Nesse método, usamos um Modelo Entidade-Relacionamento (MER), representado graficamente por um Diagrama Entidade-Relacionamento (DER). A abordagem ER é amplamente usada e serve como base até mesmo para técnicas mais recentes, como a modelagem orientada a objetos.
+The most common modeling technique is the Entity-Relationship (ER) approach, developed by Peter Chen in 1976. In this method, we use an Entity-Relationship Model (ERM), graphically represented by an Entity-Relationship Diagram (ERD). The ER approach is widely used and serves as a basis even for more recent techniques, such as object-oriented modeling.
 
-O maior desafio da modelagem de dados é entender um problema do mundo real e transformá-lo em uma solução viável. Para isso, é essencial que o profissional de informática saiba ouvir o cliente ou usuário, identificando o que é realmente necessário para a implementação. Além disso, é fundamental dominar as técnicas de modelagem para representar o problema de forma conceitual antes de iniciar a implementação.
+The biggest challenge of data modeling is understanding a real-world problem and transforming it into a viable solution. For this, it is essential that the IT professional knows how to listen to the client or user, identifying what is really needed for implementation. Additionally, it is fundamental to master modeling techniques to represent the problem conceptually before starting implementation.
 
 ![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
 
 ### Resumo
 
-- Um Banco de Dados consiste em Tabelas.
+- A Database consists of Tables.
   
-- Uma Tabela é a estrutura interna de um Banco de Dados, composta por Dados.
-  
-- As Tabelas são compostas por Linhas e Colunas.
-  
-- Cada Coluna representa uma Categoria de Dados na Tabela, também conhecida como Campo.
-  
-- Cada Linha, chamada de Registro, contém os dados completos de um objeto representado pela Tabela.
+- A Table is the internal structure of a Database, composed of Data.
 
-### DER e Notações
+- Tables are composed of Rows and Columns.
 
-No contexto de Diagramas Entidade-Relacionamento (DER), diferentes notações são utilizadas para representar modelos conceituais e físicos de bancos de dados. Aqui estão algumas delas:
+- Each Column represents a Data Category in the Table, also known as a Field.
 
-- **Notação de Peter Pin-Shan Chen (modelo conceitual):**
-  - Desenvolvida por Peter Pin-Shan Chen, esta notação é amplamente usada para representar modelos conceituais. Ela inclui símbolos para entidades, relacionamentos, atributos e cardinalidade.
+- Each Row, called a Record, contains the complete data of an object represented by the Table.
 
-- **Notação de Carlos Alberto Hauser (modelo conceitual):**
-  - Carlos Alberto Hauser desenvolveu uma notação semelhante à de Chen para modelagem conceitual. Ela também inclui símbolos para entidades, relacionamentos e atributos, com ênfase na clareza e na simplicidade.
+### ERD and Notations
 
-- **Notação de James Martin (modelo físico):**
-  - Utilizada para representar modelos físicos de bancos de dados, a notação de James Martin é mais detalhada e focada em aspectos de implementação. Ela inclui símbolos para tabelas, chaves primárias, chaves estrangeiras e outros elementos físicos do banco de dados.
+In the context of Entity-Relationship Diagrams (ERDs), different notations are used to represent conceptual and physical models of databases. Here are some of them:
 
-- **Notação de Charles Willian Bachman (modelo físico):**
-  - Desenvolvida por Charles Willian Bachman, esta notação é outra abordagem para representar modelos físicos de bancos de dados. Ela se concentra em aspectos como estruturas de dados, relacionamentos e restrições de integridade.
+- **Peter Pin-Shan Chen Notation (conceptual model):**
+  - Developed by Peter Pin-Shan Chen, this notation is widely used to represent conceptual models. It includes symbols for entities, relationships, attributes, and cardinality.
 
-Cada uma dessas notações tem suas próprias convenções e símbolos específicos, projetados para atender às necessidades de modelagem em diferentes estágios do desenvolvimento de bancos de dados.
+- **Carlos Alberto Hauser Notation (conceptual model):**
+  - Carlos Alberto Hauser developed a notation similar to Chen's for conceptual modeling. It also includes symbols for entities, relationships, and attributes, with an emphasis on clarity and simplicity.
 
-## Modelagem Conceitual
+- **James Martin Notation (physical model):**
+  - Used to represent physical models of databases, James Martin's notation is more detailed and focused on implementation aspects. It includes symbols for tables, primary keys, foreign keys, and other physical elements of the database.
+
+- **Charles Willian Bachman Notation (physical model):**
+  - Developed by Charles Willian Bachman, this notation is another approach to represent physical models of databases. It focuses on aspects such as data structures, relationships, and integrity constraints.
+
+Each of these notations has its own conventions and specific symbols, designed to meet modeling needs at different stages of database development.
+
+## Conceptual Modeling
 
 ![CONCEITOS_SIMBOLOS](../imgs/DOC_IMAGES/CONCEITOS_SIMBOLOS.png)
 
-### Entidade
+### Entity
 
-Uma entidade representa um conjunto de objetos do mundo real no modelo conceitual.
+An entity represents a set of real-world objects in the conceptual model.
 
 ![ENTIDADE](../imgs/DOC_IMAGES/ENTIDADE.png)
 
-### Atributo
+### Attribute
 
-Um atributo é um espaço reservado para armazenar dados em cada ocorrência de uma entidade ou relacionamento. Cada atributo representa uma informação associada.
+An attribute is a placeholder for storing data in each occurrence of an entity or relationship. Each attribute represents an associated piece of information.
 
 ![ATRIBUTO](../imgs/DOC_IMAGES/ATRIBUTO.png)
 
-### Identificador
+### Identifier
 
-Toda entidade deve ter um identificador, que é um conjunto de um ou mais atributos cujos valores diferenciam uma ocorrência da entidade das outras.
+Every entity must have an identifier, which is a set of one or more attributes whose values differentiate one occurrence of the entity from others.
 
 ![IDENTIFICADOR](../imgs/DOC_IMAGES/IDENTIFICADOR.png)
 
-### Atributo com Cardinalidade
+### Attribute with Cardinality
 
-A cardinalidade de um atributo define quantos valores desse atributo podem estar associados a uma ocorrência da entidade/relacionamento ao qual pertence. É representada por um par de valores, em que o primeiro é a cardinalidade mínima e o segundo é a cardinalidade máxima. Um atributo é opcional quando a cardinalidade mínima é 0 (zero) e/ou multivalorado quando a cardinalidade máxima é N.
+The cardinality of an attribute defines how many values of that attribute can be associated with an occurrence of the entity/relationship to which it belongs. It is represented by a pair of values, where the first is the minimum cardinality and the second is the maximum cardinality. An attribute is optional when the minimum cardinality is 0 (zero) and/or multivalued when the maximum cardinality is N.
 
 ![ATRIBUTO_CARDINALIDADE](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE.png)
 
-### Atributo Composto
+### Composite Attribute
 
-Um atributo composto é formado por um atributo base, que dá nome ao atributo, seguido dos atributos que compõem sua estrutura. O número máximo de níveis é 1 (um), ou seja, não é permitido criar um atributo composto por outro atributo composto.
+A composite attribute is formed by a base attribute, which names the attribute, followed by the attributes that make up its structure. The maximum number of levels is 1 (one), meaning it is not allowed to create a composite attribute composed of another composite attribute.
 
 ![ATRIBUTO_COMPOSTO](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO.png)
 
-## Modelagem Lógica/Física
+## Logical/Physical Modeling
 
-O modelo lógico é a representação resultante da conversão de um modelo conceitual para um tipo específico de banco de dados, sendo o nível de abstração visto pelo usuário do sistema de gerenciamento de banco de dados (SGBD).
+The logical model is the representation resulting from the conversion of a conceptual model to a specific type of database, being the abstraction level seen by the database management system (DBMS) user.
 
-O modelo físico é a representação resultante da conversão de um modelo lógico para um modelo direcionado a um SGBD específico, ou seja, é uma representação do modelo de acordo com as características do SGBD escolhido.
+The physical model is the representation resulting from the conversion of a logical model to a model directed at a specific DBMS, meaning it is a representation of the model according to the characteristics of the chosen DBMS.
 
 ![CONCEITUAL_LOGICO](../imgs/DOC_IMAGES/CONCEITUAL_LOGICO.png)
 
 ![ENTIDADE_ATRIBUTO](../imgs/DOC_IMAGES/ENTIDADE_ATRIBUTO.png)
 
-### Atributo com Identificador
+### Attribute with Identifier
 
-No modelo lógico, o atributo identificador é representado como a Chave Primária da tabela (entidade). Ele é indicado pelo símbolo de uma chave dourada na frente do nome do atributo ou pelo prefixo "PK".
+In the logical model, the identifier attribute is represented as the Primary Key of the table (entity). It is indicated by the symbol of a golden key in front of the attribute name or by the prefix "PK".
 
 ![ATRIBUTO_IDENTIFICADOR](../imgs/DOC_IMAGES/ATRIBUTO_IDENTIFICADOR.png)
 
-### Atributo com Cardinalidade
+### Attribute with Cardinality
 
-Os atributos com cardinalidade, sejam eles opcionais ou multivalorados, são adicionados à entidade de acordo com a quantidade expressa na cardinalidade máxima. Em alguns casos, pode ser necessário criar outra tabela para adicionar esse atributo, especialmente se a cardinalidade máxima for maior que 1 e houver a necessidade de manter a integridade e normalização dos dados.
+Attributes with cardinality, whether optional or multivalued, are added to the entity according to the quantity expressed in the maximum cardinality. In some cases, it may be necessary to create another table to add this attribute, especially if the maximum cardinality is greater than 1 and there is a need to maintain data integrity and normalization.
 
 ![ATRIBUTO_CARDINALIDADE_2](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE_2.png)
 
-### Atributo Composto
+### Composite Attribute
 
-No modelo conceitual, apenas os atributos que fazem parte da composição aparecem dentro da entidade. O atributo base é usado para nomear a entidade. Em alguns casos, pode ser necessário criar outra tabela para adicionar esse atributo, especialmente se a estrutura do atributo composto for complexa ou se houver a necessidade de manter a integridade e normalização dos dados.
+In the conceptual model, only the attributes that are part of the composition appear within the entity. The base attribute is used to name the entity. In some cases, it may be necessary to create another table to add this attribute, especially if the structure of the composite attribute is complex or if there is a need to maintain data integrity and normalization.
 
 ![ATRIBUTO_COMPOSTO_2](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO_2.png)
 
-### Tipos de Dados para os Atributos
+### Data Types for Attributes
 
-| Tipo de Dado | Descrição                                           |
-|--------------|-----------------------------------------------------|
-| **CHAR(n)**      | Campo de texto limitado, sempre preenchido à direita com espaços, com tamanho fixo n. |
-| **VARCHAR(n)**   | Campo de texto de tamanho variável, com tamanho máximo n. |
-| **INT**          | Inteiro de tamanho normal.                           |
-| **FLOAT(p)**     | Número de ponto flutuante pequeno, com precisão p.   |
-| **DOUBLE(n, p)** | Número de ponto flutuante de tamanho normal, com precisão n e p. |
-| **DECIMAL(n, p)**| Número de ponto flutuante de tamanho normal com tamanho fixo, com precisão n e p. |
-| **DATE**         | Tipo de dado para armazenar datas no formato AAAA-MM-DD. |
-| **TIME**         | Tipo de dado para armazenar horas no formato HH:NN:SS. |
-| **DATETIME**     | Combinação de data e hora separada por espaço, no formato AAAA-MM-DD HH:NN:SS. |
-| **TIMESTAMP**    | Combinação de data e hora separada por espaço, no formato AAAA-MM-DD HH:NN:SS. |
-| **ENUM('val1', 'val2', ..., 'valN')** | Enumeração de valores, aceitando um valor do tipo texto ou número inteiro. |
-| **BLOB**         | Campo para armazenar imagem ou texto muito grande, com tamanho máximo de 4294967295 ou 4GB. |
+| Data Type       | Description                                                  |
+|-----------------|--------------------------------------------------------------|
+| **CHAR(n)**         | Limited text field, always right-padded with spaces, fixed size n. |
+| **VARCHAR(n)**      | Variable-length text field, maximum size n.                  |
+| **INT**             | Normal-sized integer.                                         |
+| **FLOAT(p)**        | Small floating-point number, precision p.                     |
+| **DOUBLE(n, p)**    | Normal-sized floating-point number, precision n and p.        |
+| **DECIMAL(n, p)**   | Fixed-size floating-point number, precision n and p.          |
+| **DATE**            | Data type for storing dates in the format YYYY-MM-DD.         |
+| **TIME**            | Data type for storing time in the format HH:MM:SS.            |
+| **DATETIME**        | Combination of date and time separated by a space, in the format YYYY-MM-DD HH:MM:SS. |
+| **TIMESTAMP**       | Combination of date and time separated by a space, in the format YYYY-MM-DD HH:MM:SS. |
+| **ENUM('val1', 'val2', ..., 'valN')** | Enumeration of values, accepting a text or integer value.   |
+| **BLOB**            | Field for storing large image or text, with maximum size of 4294967295 or 4GB. |
 
-***Exemplo de uso:***
+***Usage Example:***
 
 ```sql
-CREATE TABLE exemplo (
+CREATE TABLE example (
     char_column CHAR(10),
     varchar_column VARCHAR(255),
     int_column INT,
@@ -147,7 +147,7 @@ CREATE TABLE exemplo (
     time_column TIME,
     datetime_column DATETIME,
     timestamp_column TIMESTAMP,
-    enum_column ENUM('valor1', 'valor2', 'valor3'),
+    enum_column ENUM('value1', 'value2', 'value3'),
     blob_column BLOB,
     unique_column VARCHAR(50) UNIQUE,
     not_null_column INT NOT NULL,
@@ -155,205 +155,205 @@ CREATE TABLE exemplo (
 );
 ```
 
-### Opções: Integridade de Dados a nível de Atributo
+### Options: Attribute-Level Data Integrity
 
-| Modificador    | Descrição                                                                                   |
-|----------------|---------------------------------------------------------------------------------------------|
-| **NOT NULL**       | Impede a inclusão de valores nulos na coluna, tornando o campo obrigatório.                  |
-| **AUTO_INCREMENT** | Gera automaticamente um número incremental para cada novo registro na coluna.                 |
-| **UNIQUE**         | Garante a unicidade dos valores em uma coluna, não permitindo a duplicação de valores.       |
-| **DEFAULT(valor)** | Define um valor padrão que será assumido na inserção de um novo registro, se não for fornecido um valor explícito para a coluna. |
+| Modifier       | Description                                                                                  |
+|----------------|----------------------------------------------------------------------------------------------|
+| **NOT NULL**       | Prevents the inclusion of null values in the column, making the field mandatory.             |
+| **AUTO_INCREMENT** | Automatically generates an incremental number for each new record in the column.             |
+| **UNIQUE**         | Ensures the uniqueness of values in a column, disallowing duplication of values.             |
+| **DEFAULT(value)** | Defines a default value that will be assumed upon insertion of a new record if no explicit value is provided for the column. |
 
-***Exemplo de uso:***
+***Usage Example:***
 
 ```sql
-CREATE TABLE exemplo (
+CREATE TABLE example (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
+    name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE,
-    status ENUM('ativo', 'inativo') DEFAULT 'ativo'
+    status ENUM('active', 'inactive') DEFAULT 'active'
 );
 ```
 
-Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a coluna `nome` é obrigatória e não pode ser nula, a coluna `email` deve ser única em toda a tabela e a coluna `status` terá o valor padrão `'ativo'` se nenhum valor for fornecido durante a inserção de um novo registro.
+In this example, the `id` column will have automatically incremented values, the `name` column is mandatory and cannot be null, the `email` column must be unique throughout the table, and the `status` column will default to `'active'` if no value is provided during the insertion of a new record.
 
-## Relacionamento
+## Relationship
 
 ![RELACAO](../imgs/DOC_IMAGES/RELACAO.png)
 
-### Tipos de Relação
+### Relationship Types
 
 ![TIPOS_RELACAO](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
 
-Além de especificar os objetos sobre os quais se deseja manter informações, é importante também definir as associações entre esses objetos. Existem diferentes tipos de relações que podem ocorrer em um modelo de banco de dados:
+In addition to specifying the objects about which you want to maintain information, it's also important to define the associations between these objects. There are different types of relationships that can occur in a database model:
 
-- **Um para Um (1:1)**: Cada ocorrência de uma entidade está associada a no máximo uma ocorrência de outra entidade, e vice-versa.
+- **One-to-One (1:1)**: Each occurrence of one entity is associated with at most one occurrence of another entity, and vice versa.
 
-- **Um para Muitos (1:N)**: Cada ocorrência de uma entidade está associada a uma ou mais ocorrências de outra entidade, mas cada ocorrência desta última está associada a no máximo uma ocorrência da primeira.
+- **One-to-Many (1:N)**: Each occurrence of one entity is associated with one or more occurrences of another entity, but each occurrence of the latter is associated with at most one occurrence of the former.
 
-- **Muitos para Muitos (N:M)**: Cada ocorrência de uma entidade pode estar associada a várias ocorrências de outra entidade e vice-versa.
+- **Many-to-Many (N:M)**: Each occurrence of one entity can be associated with several occurrences of another entity, and vice versa.
 
-Esses tipos de relações ajudam a definir como os dados estão interconectados no banco de dados e são fundamentais para o projeto e a estruturação adequada do sistema de banco de dados.
+These types of relationships help define how data is interconnected in the database and are fundamental to the proper design and structuring of the database system.
 
-### Cardinalidade
+### Cardinality
 
-Ao projetar um banco de dados, uma propriedade crucial de um relacionamento é quantas ocorrências de uma entidade podem estar associadas a uma determinada ocorrência por meio desse relacionamento. Essa propriedade é conhecida como cardinalidade de uma entidade em um relacionamento.
+When designing a database, a crucial property of a relationship is how many occurrences of one entity can be associated with a given occurrence of another entity through that relationship. This property is known as the cardinality of an entity in a relationship.
 	
-#### Cardinalidade Mínima
+#### Minimum Cardinality
 
-A cardinalidade mínima refere-se ao número mínimo de ocorrências de uma entidade que podem estar associadas a uma ocorrência de outra entidade por meio de um relacionamento.
+Minimum cardinality refers to the minimum number of occurrences of one entity that can be associated with an occurrence of another entity through a relationship.
 
-Podemos classificar os relacionamentos da seguinte forma:
+We can classify relationships as follows:
 
 ![CARDINALIDADE_MINIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MINIMA.png)
 
-#### Cardinalidade Máxima
+#### Maximum Cardinality
 
-A cardinalidade máxima é usada para classificar relacionamentos binários, onde as ocorrências envolvem duas entidades.
+Maximum cardinality is used to classify binary relationships, where the occurrences involve two entities.
 
-Podemos classificar os relacionamentos da seguinte forma:
+We can classify relationships as follows:
 
 ![CARDINALIDADE_MAXIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MAXIMA.png)
 
-### Cardinalidade Representação
+### Cardinality Representation
 
 ![CARDINALIDADE_REPRESENTACAO](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO.png)
 
-### Sentido de Leitura
+### Reading Direction
 
 ![CARDINALIDADE_REPRESENTACAO_2](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
 
-> "Um modelo lógico é uma descrição de um banco de dados no nível de abstração visto pelo usuário do sistema de gerenciamento de banco de dados."
+> "A logical model is a description of a database at the abstraction level seen by the user of the database management system."
 
-## Conceito de Chave
+## Key Concept
 
-O conceito fundamental para estabelecer relações entre linhas de tabelas em um banco de dados relacional é o da chave.
+The fundamental concept for establishing relationships between rows of tables in a relational database is that of the key.
 
-- **Chave primária Simples / Compostas :** Pode ser uma única coluna ou a combinação de duas ou mais colunas, e é responsável por identificar exclusivamente cada linha na tabela. É a origem do identificador único para cada registro.
+- **Simple/Composite Primary Key:** It can be a single column or the combination of two or more columns, and it is responsible for uniquely identifying each row in the table. It's the origin of the unique identifier for each record.
 
     ![CHAVE_PRIMARIA_SIMPLES](../imgs/DOC_IMAGES/CHAVE_PRIMARIA_SIMPLES.png)
 
-- **Chave estrangeira:** Representa uma coluna ou conjunto de colunas em uma tabela que referenciam a chave primária de outra tabela. Estabelece relacionamentos entre tabelas e garante a integridade referencial no banco de dados. É a origem do relacionamento entre as tabelas.
+- **Foreign Key:** Represents a column or set of columns in a table that references the primary key of another table. It establishes relationships between tables and ensures referential integrity in the database. It's the origin of the relationship between tables.
 
     ![CHAVE_ESTRANGEIRA](../imgs/DOC_IMAGES/CHAVE_ESTRANGEIRA.png)
 
-- **Chave alternativa:** Em certos casos, os valores de uma coluna não podem ser repetidos, mesmo que essa coluna não faça parte da chave primária. Essas colunas são conhecidas como chaves alternativas.
+- **Alternate Key:** In certain cases, the values of a column cannot be repeated, even if that column is not part of the primary key. These columns are known as alternate keys.
 
-### Transformação
+### Transformation
 
-A transformação ocorre em função da cardinalidade máxima usada para classificar relacionamentos binários.
+Transformation occurs based on the maximum cardinality used to classify binary relationships.
 
 ![TRANSFORMACAO](../imgs/DOC_IMAGES/TRANSFORMACAO.png)
 
-O resultado da transformação do relacionamento na modelagem lógica pode ser dividido em:
+The result of the transformation of the relationship in the logical model can be divided into:
 
-- **Tabela Própria:** O relacionamento se torna uma nova entidade (tabela), recebendo como identificador as chaves primárias das duas tabelas que participam do relacionamento.
+- **Own Table:** The relationship becomes a new entity (table), receiving as its identifier the primary keys of the two tables involved in the relationship.
 
-- **Adição de Coluna:** A entidade com maior cardinalidade máxima recebe como uma coluna adicional o identificador da entidade com menor cardinalidade máxima.
+- **Column Addition:** The entity with the higher maximum cardinality receives, as an additional column, the identifier of the entity with the lower maximum cardinality.
 
-- **Fusão de Tabelas:** As duas entidades se fundem em uma única tabela e o relacionamento é representado diretamente nela.
+- **Table Merge:** The two entities are merged into a single table, and the relationship is directly represented in it.
 
-#### Relacionamentos 1:1 (Conceitual)
+#### One-to-One Relationships (Conceptual)
 
 ![RELACIONAMENTO_1_1](../imgs/DOC_IMAGES/RELACIONAMENTO_1_1.png)
 
-#### Relacionamentos 1:n (Conceitual)
+#### One-to-Many Relationships (Conceptual)
 
 ![RELACIONAMENTO_1_N](../imgs/DOC_IMAGES/RELACIONAMENTO_1_N.png)
 
-#### Relacionamentos n:n (Conceitual)
+#### Many-to-Many Relationships (Conceptual)
 
 ![RELACIONAMENTO_N_N](../imgs/DOC_IMAGES/RELACIONAMENTO_N_N.png)
 
-### Chaves Estrangeiras
+### Foreign Keys
 
 ```sql
-CREATE TABLE nome_da_tabela (
-	nome_campo tipo_campo ,
-	
-	FOREIGN KEY (nome_campo)
-	REFERENCES nome_tabela_relacionada (nome_campo_relacionado)
+CREATE TABLE table_name (
+    column_name data_type ,
+    
+    FOREIGN KEY (column_name)
+    REFERENCES referenced_table_name (referenced_column_name)
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE funcionario (
-	departamento int,
+CREATE TABLE employee (
+    department int,
 
-	FOREIGN KEY (departamento) REFERENCES departamento (codigo)
+    FOREIGN KEY (department) REFERENCES department (code)
 );
 ```
 
-### Transformação - Relacionamentos 1:1
+### Transformation - One-to-One Relationships
 
 ![TRANSFORMACAO_RL_1_1](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1.png)
 
-#### Fusão de Tabelas
+#### Table Merge
 
 ![TRANSFORMACAO_RL_1_1_FUSAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1_FUSAO.png)
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE ENTIDADE_AB (
-	ID_A INT NOT NULL,
-	ID_B INT NOT NULL,
-	PRIMARY KEY (ID_A, ID_B),
+CREATE TABLE ENTITY_AB (
+    ID_A INT NOT NULL,
+    ID_B INT NOT NULL,
+    PRIMARY KEY (ID_A, ID_B),
 );
 ```
 
-### Transformação - Relacionamento 1:n
+### Transformation - One-to-Many Relationship
 
 ![TRANSFORMACAO_RL_1_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N.png)
 
-#### Adição de Colunas
+#### Column Addition
 
 ![TRANSFORMACAO_RL_1_N_ADICAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N_ADICAO.png)
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE ENTIDADE_A (
-	ID_A INT NOT NULL,
-	PRIMARY KEY (ID_A),
+CREATE TABLE ENTITY_A (
+    ID_A INT NOT NULL,
+    PRIMARY KEY (ID_A),
 );
 
-CREATE TABLE ENTIDADE_B (
-	ID_B INT NOT NULL,
-	ID_A INT,
-	PRIMARY KEY (ID_B),
-	FOREIGN KEY (ID_A) REFERENCES ENTIDADE_A (ID_A)
+CREATE TABLE ENTITY_B (
+    ID_B INT NOT NULL,
+    ID_A INT,
+    PRIMARY KEY (ID_B),
+    FOREIGN KEY (ID_A) REFERENCES ENTITY_A (ID_A)
 );
 ```
 
-### Transformação - Relacionamento n:n
+### Transformation - Many-to-Many Relationship
 
 ![TRANSFORMACAO_RL_N_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N.png)
 
-#### Tabela Pŕopria
+#### Own Table
 
 ![TRANSFORMACAO_RL_N_N_TB_PROPRIA](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE ENTIDADE_A (
-	ID_A INT NOT NULL,
-	PRIMARY KEY (ID_A),
+CREATE TABLE ENTITY_A (
+    ID_A INT NOT NULL,
+    PRIMARY KEY (ID_A),
 );
 
-CREATE TABLE ENTIDADE_B (
-	ID_B INT NOT NULL,
-	PRIMARY KEY (ID_B),
+CREATE TABLE ENTITY_B (
+    ID_B INT NOT NULL,
+    PRIMARY KEY (ID_B),
 );
 
-CREATE TABLE RELACAO (
-	ID_A INT NOT NULL,
-	ID_B INT NOT NULL,
-	PRIMARY KEY (ID_A, ID_B),
-	FOREIGN KEY (ID_A) REFERENCES ENTIDADE_A (ID_A),
-	FOREIGN KEY (ID_B) REFERENCES ENTIDADE_B (ID_B)
+CREATE TABLE RELATION (
+    ID_A INT NOT NULL,
+    ID_B INT NOT NULL,
+    PRIMARY KEY (ID_A, ID_B),
+    FOREIGN KEY (ID_A) REFERENCES ENTITY_A (ID_A),
+    FOREIGN KEY (ID_B) REFERENCES ENTITY_B (ID_B)
 );
 ```
