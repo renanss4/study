@@ -293,3 +293,122 @@ O conceito básico para estabelecer relações entre linhas de tabelas de um ban
     ![CHAVE_ESTRANGEIRA](./imgs/README/CHAVE_ESTRANGEIRA.png)
 
 - **Chave alternativa:** Em alguns casos, os valores de uma coluna não pode ser repetidos, mesmo essa coluna não fazendo parte de uma chave primária, assim temos as chaves alternativas.
+
+### Transformação
+
+A transformação é em função da cardinalidade máxima usada para classificar relacionamentos binários.
+
+![TRANSFORMACAO](./imgs/README/TRANSFORMACAO.png)
+
+O produto da transformação do relacionamento na modelagem lógica está dividido em :
+
+- Tabela própria: O relacionamento vira uma nota entidade (tabela) recebendo o identificador das duas tabelas que fazer parte do relacionamento, tornando-se chave primária;
+
+- Adição de Coluna: A entidade de maior cardinalidade máxima recebe o identificador da entidade de menor cardinalidade máxima;
+
+- Fusão de Tabela: As duas entidade se tornam apenas uma e some o relacionamento;
+
+#### Relacionamentos 1:1 (Conceitual)
+
+![RELACIONAMENTO_1_1](./imgs/README/RELACIONAMENTO_1_1.png)
+
+#### Relacionamentos 1:n (Conceitual)
+
+![RELACIONAMENTO_1_N](./imgs/README/RELACIONAMENTO_1_N.png)
+
+#### Relacionamentos n:n (Conceitual)
+
+![RELACIONAMENTO_N_N](./imgs/README/RELACIONAMENTO_N_N.png)
+
+### Chaves Estrangeiras
+
+```sql
+CREATE TABLE nome_da_tabela (
+	nome_campo tipo_campo ,
+	
+	FOREIGN KEY (nome_campo)
+	REFERENCES nome_tabela_relacionada (nome_campo_relacionado)
+);
+```
+
+***Exemplo:***
+
+```sql
+CREATE TABLE funcionario (
+	departamento int,
+
+	FOREIGN KEY 	(departamento) REFERENCES    departamento (codigo)
+);
+```
+
+### Transformação - Relacionamentos 1:1
+
+![TRANSFORMACAO_RL_1_1](./imgs/README/TRANSFORMACAO_RL_1_1.png)
+
+#### Fusão de Tabelas
+
+![TRANSFORMACAO_RL_1_1_FUSAO](./imgs/README/TRANSFORMACAO_RL_1_1_FUSAO.png)
+
+***Exemplo:***
+
+```sql
+CREATE TABLE ENTIDADE_AB (
+	ID_A INT NOT NULL,
+	ID_B INT NOT NULL,
+	PRIMARY KEY (ID_A, ID_B),
+);
+```
+
+### Transformação - Relacionamento 1:n
+
+![TRANSFORMACAO_RL_1_N](./imgs/README/TRANSFORMACAO_RL_1_N.png)
+
+#### Adição de Colunas
+
+![TRANSFORMACAO_RL_1_N_ADICAO](./imgs/README/TRANSFORMACAO_RL_1_N_ADICAO.png)
+
+***Exemplo:***
+
+```sql
+CREATE TABLE ENTIDADE_A (
+	ID_A INT NOT NULL,
+	PRIMARY KEY (ID_A),
+);
+
+CREATE TABLE ENTIDADE_B (
+	ID_B INT NOT NULL,
+	ID_A INT,
+	PRIMARY KEY (ID_B),
+	FOREIGN KEY 	(ID_A) REFERENCES ENTIDADE_A (ID_A)
+);
+```
+
+### Transformação - Relacionamento n:n
+
+![TRANSFORMACAO_RL_N_N](./imgs/README/TRANSFORMACAO_RL_N_N.png)
+
+#### Tabela Pŕopria
+
+![TRANSFORMACAO_RL_N_N_TB_PROPRIA](./imgs/README/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
+
+***Exemplo:***
+
+```sql
+CREATE TABLE ENTIDADE_A (
+	ID_A INT NOT NULL,
+	PRIMARY KEY (ID_A),
+);
+
+CREATE TABLE ENTIDADE_B (
+	ID_B INT NOT NULL,
+	PRIMARY KEY (ID_B),
+);
+
+CREATE TABLE RELACAO (
+	ID_A INT NOT NULL,
+	ID_B INT NOT NULL,
+	PRIMARY KEY (ID_A, ID_B),
+	FOREIGN KEY 	(ID_A) REFERENCES ENTIDADE_A (ID_A)
+	FOREIGN KEY 	(ID_B) REFERENCES ENTIDADE_B (ID_B)
+);
+```
