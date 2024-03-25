@@ -2,7 +2,7 @@
 
 Aqui você encontrá conceitos de relacionamentos, chaves primárias, chaves estrangeiras, cardinalidade e transformações.
 
-## Um pouco de história - Modelagem de Dados
+## Modelagem de Dados
 
 Um modelo de dados é uma descrição dos tipos de informações que estão armazenadas em um banco de dados.
 
@@ -22,7 +22,7 @@ Saber ouvir o cliente/usuário abstraindo da conversa o que é realmente útil p
 
 Conhecer as técnicas de modelagem a fim de representar o problema de forma conceitual antes de iniciar a implementação.
 
-![PROJETO_BANCO_DE_DADOS](./imgs/README/PROJETO_BANCO_DE_DADOS.png)
+![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
 
 SGBD (Sistema de Gerenciamento de Banco de Dados) é um software que gerencia o armazenamento, organização e acesso a dados. Exemplos incluem MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL e MongoDB.
 
@@ -50,37 +50,37 @@ Um Linha é denominado como Registro e contém todos os dados sobre um objeto a 
 
 ## Modelagem Conceitual
 
-![CONCEITOS_SIMBOLOS](./imgs/README/CONCEITOS_SIMBOLOS.png)
+![CONCEITOS_SIMBOLOS](../imgs/DOC_IMAGES/CONCEITOS_SIMBOLOS.png)
 
 ### Entidade
 
 Uma entidade representa, no modelo conceitual, um conjunto de objetos da realidade modelada.
 
-![ENTIDADE](./imgs/README/ENTIDADE.png)
+![ENTIDADE](../imgs/DOC_IMAGES/ENTIDADE.png)
 
 ### Atributo
 
 Atributo é igual ao espaço reservado para receber dado a cada ocorrência de uma entidade ou de um relacionamento. Cada atributo representam a informação associada.
 
-![ATRIBUTO](./imgs/README/ATRIBUTO.png)
+![ATRIBUTO](../imgs/DOC_IMAGES/ATRIBUTO.png)
 
 ### Identificador
 
 Cada entidade deve possuir um identificador. Um identificador é um conjunto de um ou mais atributos cujos valores servem para distinguir uma ocorrência da entidade das demais ocorrências da mesma entidade.
 
-![IDENTIFICADOR](./imgs/README/IDENTIFICADOR.png)
+![IDENTIFICADOR](../imgs/DOC_IMAGES/IDENTIFICADOR.png)
 
 ### Atributo com Cardinalidade
 
 A cardinalidade de um atributo define quantos valores deste atributo podem estar associados a uma ocorrência da entidade/relacionamento a qual ele pertence Esse atributo é representado por um par de valor, no qual o primeiro valor é a cardinalidade mínima e o segundo valor a cardinalidade máxima. Temos o atributo opcional quando a cardinalidade mínima é 0 (Zero) e/ou atributo multivalorado quando a cardinalidade máxima é N.
 
-![ATRIBUTO_CARDINALIDADE](./imgs/README/ATRIBUTO_CARDINALIDADE.png)
+![ATRIBUTO_CARDINALIDADE](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE.png)
 
 ### Atributo Composto
 
 O atributo composto é formado por um atributo base que da nome ao atributo, seguido dos atributos que fazem parte da sua composição. O numero máximo de níveis é 1 (um), ou seja, não é correto criar um atributo composto por outro atributo composto.
 
-![ATRIBUTO_COMPOSTO](./imgs/README/ATRIBUTO_COMPOSTO.png)
+![ATRIBUTO_COMPOSTO](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO.png)
 
 ## Modelagem Lógica/Física
 
@@ -88,27 +88,27 @@ O modelo lógico é o resultado ou produto da conversão de um modelo conceitual
 
 O modelo físico é o resultado ou produto da conversão de um modelo lógico para um modelo direcionado a um SGDB específico, ou seja uma representação do modelo de acordo com as características do SGDB escolhido.
 
-![CONCEITUAL_LOGICO](./imgs/README/CONCEITUAL_LOGICO.png)
+![CONCEITUAL_LOGICO](../imgs/DOC_IMAGES/CONCEITUAL_LOGICO.png)
 
-![ENTIDADE_ATRIBUTO](./imgs/README/ENTIDADE_ATRIBUTO.png)
+![ENTIDADE_ATRIBUTO](../imgs/DOC_IMAGES/ENTIDADE_ATRIBUTO.png)
 
 ### Atributo com Identificador
 
 No modelo lógico o atributo identificador é identificado como a Chave primária da tabela (entidade). É representando do símbolo de uma chave dourada na frente do nome do atributo, ou também pode ser indicado pelo prefixo “PK”.
 
-![ATRIBUTO_IDENTIFICADOR](./imgs/README/ATRIBUTO_IDENTIFICADOR.png)
+![ATRIBUTO_IDENTIFICADOR](../imgs/DOC_IMAGES/ATRIBUTO_IDENTIFICADOR.png)
 
 ### Atributo com Cardinalidade
 
 Os atributos com cardinalidade, sejam eles opcionais ou multivalorados, são adicionados na entidade conforme a quantidade expressa na cardinalidade máxima. Também existe a possibilidade de criar uma outra tabela para adicionar esse atributo.
 
-![ATRIBUTO_CARDINALIDADE_2](./imgs/README/ATRIBUTO_CARDINALIDADE_2.png)
+![ATRIBUTO_CARDINALIDADE_2](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE_2.png)
 
 ### Atributo Composto
 
 No modelo conceitual apenas os atributos que fazem parte da composição aparecem dentro da entidade. O atributo base é Também existe a possibilidade de criar uma outra tabela para adicionar esse atributo, nesse caso o atributo base é utilizado para nomear a entidade.
 
-![ATRIBUTO_COMPOSTO_2](./imgs/README/ATRIBUTO_COMPOSTO_2.png)
+![ATRIBUTO_COMPOSTO_2](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO_2.png)
 
 ### Tipos de Dados para os Atributos
 
@@ -177,13 +177,13 @@ Neste exemplo, a coluna `id` terá valores incrementais automaticamente, a colun
 
 ### Tipos de Relação
 
-![TIPOS_RELACAO](./imgs/README/TIPOS_RELACAO.png)
+![TIPOS_RELACAO](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
 
 Além de especificar os objetos sobre os quais deseja-se manter informações, uma das propriedades sobre as quais pode ser desejável manter informações é a associação entre objetos.
 
-![RELACAO](./imgs/README/RELACAO.png)
+![RELACAO](../imgs/DOC_IMAGES/RELACAO.png)
 
-![RELACAO_2](./imgs/README/RELACAO_2.png)
+![RELACAO_2](../imgs/DOC_IMAGES/RELACAO_2.png)
 
 ### Cardinalidade
 
@@ -197,7 +197,7 @@ Uma outra informação que pode ser representada por um modelo ER é o número m
 
 Podemos classificar os relacionamentos em:
 
-![CARDINALIDADE_MINIMA](./imgs/README/CARDINALIDADE_MINIMA.png)
+![CARDINALIDADE_MINIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MINIMA.png)
 
 #### Cardinalidade Máxima
 
@@ -205,15 +205,15 @@ A cardinalidade máxima pode ser usada para classificar relacionamentos binário
 
 Podemos classificar os relacionamentos em:
 
-![CARDINALIDADE_MAXIMA](./imgs/README/CARDINALIDADE_MAXIMA.png)
+![CARDINALIDADE_MAXIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MAXIMA.png)
 
 ### Cardinalidade Representação
 
-![CARDINALIDADE_REPRESENTACAO](./imgs/README/CARDINALIDADE_REPRESENTACAO.png)
+![CARDINALIDADE_REPRESENTACAO](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO.png)
 
 ### Sentido de Leitura
 
-![CARDINALIDADE_REPRESENTACAO_2](./imgs/README/CARDINALIDADE_REPRESENTACAO_2.png)
+![CARDINALIDADE_REPRESENTACAO_2](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
 
 > “Um modelo lógico é uma descrição de um banco de dados no nível de abstração visto pelo usuário do sistema gerenciador de banco de dados.”
 
@@ -223,11 +223,11 @@ O conceito básico para estabelecer relações entre linhas de tabelas de um ban
 
 - **Chave primária Simples / Compostas :** apenas uma coluna ou a combinação de duas ou mais colunas (Origem do Identificador);
 
-    ![CHAVE_PRIMARIA_SIMPLES](./imgs/README/CHAVE_PRIMARIA_SIMPLES.png)
+    ![CHAVE_PRIMARIA_SIMPLES](../imgs/DOC_IMAGES/CHAVE_PRIMARIA_SIMPLES.png)
 
 - **Chave estrangeira:** A existência de uma chave estrangeira impõe restrições que devem ser garantidas em diversas situações (Origem do Relacionamento);
 
-    ![CHAVE_ESTRANGEIRA](./imgs/README/CHAVE_ESTRANGEIRA.png)
+    ![CHAVE_ESTRANGEIRA](../imgs/DOC_IMAGES/CHAVE_ESTRANGEIRA.png)
 
 - **Chave alternativa:** Em alguns casos, os valores de uma coluna não pode ser repetidos, mesmo essa coluna não fazendo parte de uma chave primária, assim temos as chaves alternativas.
 
@@ -235,7 +235,7 @@ O conceito básico para estabelecer relações entre linhas de tabelas de um ban
 
 A transformação é em função da cardinalidade máxima usada para classificar relacionamentos binários.
 
-![TRANSFORMACAO](./imgs/README/TRANSFORMACAO.png)
+![TRANSFORMACAO](../imgs/DOC_IMAGES/TRANSFORMACAO.png)
 
 O produto da transformação do relacionamento na modelagem lógica está dividido em :
 
@@ -247,15 +247,15 @@ O produto da transformação do relacionamento na modelagem lógica está dividi
 
 #### Relacionamentos 1:1 (Conceitual)
 
-![RELACIONAMENTO_1_1](./imgs/README/RELACIONAMENTO_1_1.png)
+![RELACIONAMENTO_1_1](../imgs/DOC_IMAGES/RELACIONAMENTO_1_1.png)
 
 #### Relacionamentos 1:n (Conceitual)
 
-![RELACIONAMENTO_1_N](./imgs/README/RELACIONAMENTO_1_N.png)
+![RELACIONAMENTO_1_N](../imgs/DOC_IMAGES/RELACIONAMENTO_1_N.png)
 
 #### Relacionamentos n:n (Conceitual)
 
-![RELACIONAMENTO_N_N](./imgs/README/RELACIONAMENTO_N_N.png)
+![RELACIONAMENTO_N_N](../imgs/DOC_IMAGES/RELACIONAMENTO_N_N.png)
 
 ### Chaves Estrangeiras
 
@@ -280,11 +280,11 @@ CREATE TABLE funcionario (
 
 ### Transformação - Relacionamentos 1:1
 
-![TRANSFORMACAO_RL_1_1](./imgs/README/TRANSFORMACAO_RL_1_1.png)
+![TRANSFORMACAO_RL_1_1](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1.png)
 
 #### Fusão de Tabelas
 
-![TRANSFORMACAO_RL_1_1_FUSAO](./imgs/README/TRANSFORMACAO_RL_1_1_FUSAO.png)
+![TRANSFORMACAO_RL_1_1_FUSAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1_FUSAO.png)
 
 ***Exemplo:***
 
@@ -298,11 +298,11 @@ CREATE TABLE ENTIDADE_AB (
 
 ### Transformação - Relacionamento 1:n
 
-![TRANSFORMACAO_RL_1_N](./imgs/README/TRANSFORMACAO_RL_1_N.png)
+![TRANSFORMACAO_RL_1_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N.png)
 
 #### Adição de Colunas
 
-![TRANSFORMACAO_RL_1_N_ADICAO](./imgs/README/TRANSFORMACAO_RL_1_N_ADICAO.png)
+![TRANSFORMACAO_RL_1_N_ADICAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N_ADICAO.png)
 
 ***Exemplo:***
 
@@ -322,11 +322,11 @@ CREATE TABLE ENTIDADE_B (
 
 ### Transformação - Relacionamento n:n
 
-![TRANSFORMACAO_RL_N_N](./imgs/README/TRANSFORMACAO_RL_N_N.png)
+![TRANSFORMACAO_RL_N_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N.png)
 
 #### Tabela Pŕopria
 
-![TRANSFORMACAO_RL_N_N_TB_PROPRIA](./imgs/README/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
+![TRANSFORMACAO_RL_N_N_TB_PROPRIA](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
 
 ***Exemplo:***
 
