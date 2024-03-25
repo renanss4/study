@@ -24,7 +24,7 @@ The biggest challenge of data modeling is understanding a real-world problem and
 
 ![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
 
-### Resumo
+### Summary
 
 - A Database consists of Tables.
   
