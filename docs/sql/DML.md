@@ -120,7 +120,7 @@ SELECT * FROM nome_tabela
 SELECT * FROM CLIENTE
 ```
 
-![DML_SELECT_*_FROM](../imgs/DML/DML_SELECT_FROM.png)
+![DML_SELECT_*_FROM](../../imgs/DML/DML_SELECT_FROM.png)
 
 ### WHERE
 
@@ -147,7 +147,7 @@ WHERE
 	(IDADE >= 21 AND SEXO = ‘F’)
 ```
 
-![DML_OR_AND](../imgs/DML/DML_OR_AND.png)
+![DML_OR_AND](../../imgs/DML/DML_OR_AND.png)
 
 ### Group By
 
@@ -161,7 +161,7 @@ SELECT
 FROM;
 ```
 
-![DML_SELECT_WITHOUT_GROUP_BY](../imgs/DML/DML_SELECT_WITHOUT_GROUP_BY.png)
+![DML_SELECT_WITHOUT_GROUP_BY](../../imgs/DML/DML_SELECT_WITHOUT_GROUP_BY.png)
 
 ```sql
 SELECT
@@ -173,7 +173,7 @@ GROUP BY
 	DEPARTAMENTO;
 ```
 
-![DML_SELECT_WITH_GROUP_BY](../imgs/DML/DML_SELECT_WITH_GROUP_BY.png)
+![DML_SELECT_WITH_GROUP_BY](../../imgs/DML/DML_SELECT_WITH_GROUP_BY.png)
 
 ### Group By e suas Funções
 
@@ -192,7 +192,7 @@ GROUP BY
 SELECT * FROM CLIENTE ORDER BY NOME
 ```
 
-![DML_ORDER_BY](../imgs/DML/DML_ORDER_BY.png)
+![DML_ORDER_BY](../../imgs/DML/DML_ORDER_BY.png)
 
 #### ASC - Ascendentemente
 
@@ -200,7 +200,7 @@ SELECT * FROM CLIENTE ORDER BY NOME
 SELECT * FROM CLIENTE ORDER BY idade ASC
 ```
 
-![DML_ORDER_BY_ASC](../imgs/DML/DML_ORDER_BY_ASC.png)
+![DML_ORDER_BY_ASC](../../imgs/DML/DML_ORDER_BY_ASC.png)
 
 #### DESC - Descendentemente
 
@@ -208,7 +208,7 @@ SELECT * FROM CLIENTE ORDER BY idade ASC
 SELECT * FROM CLIENTE ORDER BY idade DESC
 ```
 
-![DML_ORDER_BY_DESC](../imgs/DML/DML_ORDER_BY_DESC.png)
+![DML_ORDER_BY_DESC](../../imgs/DML/DML_ORDER_BY_DESC.png)
 
 #### Múltiplas colunas
 
@@ -216,7 +216,7 @@ SELECT * FROM CLIENTE ORDER BY idade DESC
 SELECT * FROM CLIENTE ORDER BY IDADE DESC, SEXO, NOME
 ```
 
-![DML_ORDER_BY_MULTIPLAS_COLUNAS](../imgs/DML/DML_ORDER_BY_MULTIPLAS_COLUNAS.png)
+![DML_ORDER_BY_MULTIPLAS_COLUNAS](../../imgs/DML/DML_ORDER_BY_MULTIPLAS_COLUNAS.png)
 
 #### LIMIT - quantidade
 
@@ -224,7 +224,7 @@ SELECT * FROM CLIENTE ORDER BY IDADE DESC, SEXO, NOME
 SELECT * FROM CLIENTE ORDER BY NOME LIMIT 5
 ```
 
-![DML_ORDER_BY_LIMIT](../imgs/DML/DML_ORDER_BY_LIMIT.png)
+![DML_ORDER_BY_LIMIT](../../imgs/DML/DML_ORDER_BY_LIMIT.png)
 
 #### LIMIT - inicio, quantidade
 
@@ -232,7 +232,7 @@ SELECT * FROM CLIENTE ORDER BY NOME LIMIT 5
 SELECT * FROM CLIENTE ORDER BY NOME LIMIT 4,3
 ```
 
-![DML_ORDER_BY_LIMIT_INI_FIM](../imgs/DML/DML_ORDER_BY_LIMIT_INI_FIM.png)
+![DML_ORDER_BY_LIMIT_INI_FIM](../../imgs/DML/DML_ORDER_BY_LIMIT_INI_FIM.png)
 
 ## Pseudônimos para Tabelas e Campos
 
@@ -246,4 +246,4 @@ Para isso devemos utilizar a palavra reservada “AS” logo após o nome da tab
 SELECT NOME AS NM, IDADE FROM CLIENTE AS CL;
 ```
 
-![DML_AS](../imgs/DML/DML_AS.png)
+![DML_AS](../../imgs/DML/DML_AS.png)
