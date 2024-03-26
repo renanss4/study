@@ -1,21 +1,12 @@
-
 # Linguagem de Definição de Dados (DDL)
 
-Inclui comandos para definir, alterar e remover tabelas e índices.
+A Linguagem de Definição de Dados (DDL) inclui comandos para definir, alterar e remover a estrutura dos objetos de banco de dados, como tabelas, índices, visões e restrições. Esses comandos permitem aos usuários definir a estrutura dos dados que serão armazenados no banco de dados.
 
-## Principais comandos
+Exemplos de comandos DDL em SQL incluem:
 
-```sql
-CREATE
-```
-
-```sql
-ALTER
-```
-
-```sql
-DROP
-```
+- **CREATE`**: Para criar novos objetos de banco de dados, como tabelas, índices e visões.
+- **ALTER**: Para modificar a estrutura de objetos existentes no banco de dados, como adicionar, modificar ou excluir colunas de uma tabela.
+- **DROP**: Para remover objetos de banco de dados, como tabelas, índices e visões.
 
 ## Banco de Dados
 

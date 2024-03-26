@@ -1,20 +1,13 @@
 # Linguagem de Manipulação de Dados (DML)
 
-Inclui comandos para inserir, remover, atualizar e consultar os dados armazenados nas tabelas.
+A Linguagem de Manipulação de Dados (DML) inclui comandos para inserir, remover, atualizar e consultar os dados armazenados nas tabelas de um banco de dados. Esses comandos permitem aos usuários realizar operações sobre os dados, como adicionar novos registros, modificar registros existentes, excluir registros ou consultar informações específicas.
 
-## Principais comandos
+Exemplos de comandos DML em SQL incluem:
 
-```sql
-INSERT
-```
-
-```sql
-DELETE
-```
-
-```sql
-UPDATE
-```
+- **INSERT**: Para adicionar novos registros a uma tabela.
+- **DELETE**: Para remover registros de uma tabela.
+- **UPDATE**: Para modificar os dados de registros existentes em uma tabela.
+- **SELECT**: Para consultar e recuperar dados específicos de uma ou mais tabelas.
 
 ## Inserção de registros
 
