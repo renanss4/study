@@ -22,7 +22,7 @@ The most common modeling technique is the Entity-Relationship (ER) approach, dev
 
 The biggest challenge of data modeling is understanding a real-world problem and transforming it into a viable solution. For this, it is essential that the IT professional knows how to listen to the client or user, identifying what is really needed for implementation. Additionally, it is fundamental to master modeling techniques to represent the problem conceptually before starting implementation.
 
-![PROJETO_BANCO_DE_DADOS](../imgs/DOC_IMAGES/PROJETO_BANCO_DE_DADOS.png)
+![PROJETO_BANCO_DE_DADOS](./imgs/A_LITTLE_KN/PROJETO_BANCO_DE_DADOS.png)
 
 ### Summary
 
@@ -56,37 +56,37 @@ Each of these notations has its own conventions and specific symbols, designed t
 
 ## Conceptual Modeling
 
-![CONCEITOS_SIMBOLOS](../imgs/DOC_IMAGES/CONCEITOS_SIMBOLOS.png)
+![CONCEITOS_SIMBOLOS](./imgs/A_LITTLE_KN/CONCEITOS_SIMBOLOS.png)
 
 ### Entity
 
 An entity represents a set of real-world objects in the conceptual model.
 
-![ENTIDADE](../imgs/DOC_IMAGES/ENTIDADE.png)
+![ENTIDADE](./imgs/A_LITTLE_KN/ENTIDADE.png)
 
 ### Attribute
 
 An attribute is a placeholder for storing data in each occurrence of an entity or relationship. Each attribute represents an associated piece of information.
 
-![ATRIBUTO](../imgs/DOC_IMAGES/ATRIBUTO.png)
+![ATRIBUTO](./imgs/A_LITTLE_KN/ATRIBUTO.png)
 
 ### Identifier
 
 Every entity must have an identifier, which is a set of one or more attributes whose values differentiate one occurrence of the entity from others.
 
-![IDENTIFICADOR](../imgs/DOC_IMAGES/IDENTIFICADOR.png)
+![IDENTIFICADOR](./imgs/A_LITTLE_KN/IDENTIFICADOR.png)
 
 ### Attribute with Cardinality
 
 The cardinality of an attribute defines how many values of that attribute can be associated with an occurrence of the entity/relationship to which it belongs. It is represented by a pair of values, where the first is the minimum cardinality and the second is the maximum cardinality. An attribute is optional when the minimum cardinality is 0 (zero) and/or multivalued when the maximum cardinality is N.
 
-![ATRIBUTO_CARDINALIDADE](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE.png)
+![ATRIBUTO_CARDINALIDADE](./imgs/A_LITTLE_KN/ATRIBUTO_CARDINALIDADE.png)
 
 ### Composite Attribute
 
 A composite attribute is formed by a base attribute, which names the attribute, followed by the attributes that make up its structure. The maximum number of levels is 1 (one), meaning it is not allowed to create a composite attribute composed of another composite attribute.
 
-![ATRIBUTO_COMPOSTO](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO.png)
+![ATRIBUTO_COMPOSTO](./imgs/A_LITTLE_KN/ATRIBUTO_COMPOSTO.png)
 
 ## Logical/Physical Modeling
 
@@ -94,27 +94,27 @@ The logical model is the representation resulting from the conversion of a conce
 
 The physical model is the representation resulting from the conversion of a logical model to a model directed at a specific DBMS, meaning it is a representation of the model according to the characteristics of the chosen DBMS.
 
-![CONCEITUAL_LOGICO](../imgs/DOC_IMAGES/CONCEITUAL_LOGICO.png)
+![CONCEITUAL_LOGICO](./imgs/A_LITTLE_KN/CONCEITUAL_LOGICO.png)
 
-![ENTIDADE_ATRIBUTO](../imgs/DOC_IMAGES/ENTIDADE_ATRIBUTO.png)
+![ENTIDADE_ATRIBUTO](./imgs/A_LITTLE_KN/ENTIDADE_ATRIBUTO.png)
 
 ### Attribute with Identifier
 
 In the logical model, the identifier attribute is represented as the Primary Key of the table (entity). It is indicated by the symbol of a golden key in front of the attribute name or by the prefix "PK".
 
-![ATRIBUTO_IDENTIFICADOR](../imgs/DOC_IMAGES/ATRIBUTO_IDENTIFICADOR.png)
+![ATRIBUTO_IDENTIFICADOR](./imgs/A_LITTLE_KN/ATRIBUTO_IDENTIFICADOR.png)
 
 ### Attribute with Cardinality
 
 Attributes with cardinality, whether optional or multivalued, are added to the entity according to the quantity expressed in the maximum cardinality. In some cases, it may be necessary to create another table to add this attribute, especially if the maximum cardinality is greater than 1 and there is a need to maintain data integrity and normalization.
 
-![ATRIBUTO_CARDINALIDADE_2](../imgs/DOC_IMAGES/ATRIBUTO_CARDINALIDADE_2.png)
+![ATRIBUTO_CARDINALIDADE_2](./imgs/A_LITTLE_KN/ATRIBUTO_CARDINALIDADE_2.png)
 
 ### Composite Attribute
 
 In the conceptual model, only the attributes that are part of the composition appear within the entity. The base attribute is used to name the entity. In some cases, it may be necessary to create another table to add this attribute, especially if the structure of the composite attribute is complex or if there is a need to maintain data integrity and normalization.
 
-![ATRIBUTO_COMPOSTO_2](../imgs/DOC_IMAGES/ATRIBUTO_COMPOSTO_2.png)
+![ATRIBUTO_COMPOSTO_2](./imgs/A_LITTLE_KN/ATRIBUTO_COMPOSTO_2.png)
 
 ### Data Types for Attributes
 
@@ -179,11 +179,11 @@ In this example, the `id` column will have automatically incremented values, the
 
 ## Relationship
 
-![RELACAO](../imgs/DOC_IMAGES/RELACAO.png)
+![RELACAO](./imgs/A_LITTLE_KN/RELACAO.png)
 
 ### Relationship Types
 
-![TIPOS_RELACAO](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
+![TIPOS_RELACAO](./imgs/A_LITTLE_KN/TIPOS_RELACAO.png)
 
 In addition to specifying the objects about which you want to maintain information, it's also important to define the associations between these objects. There are different types of relationships that can occur in a database model:
 
@@ -205,7 +205,7 @@ Minimum cardinality refers to the minimum number of occurrences of one entity th
 
 We can classify relationships as follows:
 
-![CARDINALIDADE_MINIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MINIMA.png)
+![CARDINALIDADE_MINIMA](./imgs/A_LITTLE_KN/CARDINALIDADE_MINIMA.png)
 
 #### Maximum Cardinality
 
@@ -213,15 +213,15 @@ Maximum cardinality is used to classify binary relationships, where the occurren
 
 We can classify relationships as follows:
 
-![CARDINALIDADE_MAXIMA](../imgs/DOC_IMAGES/CARDINALIDADE_MAXIMA.png)
+![CARDINALIDADE_MAXIMA](./imgs/A_LITTLE_KN/CARDINALIDADE_MAXIMA.png)
 
 ### Cardinality Representation
 
-![CARDINALIDADE_REPRESENTACAO](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO.png)
+![CARDINALIDADE_REPRESENTACAO](./imgs/A_LITTLE_KN/CARDINALIDADE_REPRESENTACAO.png)
 
 ### Reading Direction
 
-![CARDINALIDADE_REPRESENTACAO_2](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
+![CARDINALIDADE_REPRESENTACAO_2](./imgs/A_LITTLE_KN/CARDINALIDADE_REPRESENTACAO_2.png)
 
 > "A logical model is a description of a database at the abstraction level seen by the user of the database management system."
 
@@ -231,11 +231,11 @@ The fundamental concept for establishing relationships between rows of tables in
 
 - **Simple/Composite Primary Key:** It can be a single column or the combination of two or more columns, and it is responsible for uniquely identifying each row in the table. It's the origin of the unique identifier for each record.
 
-    ![CHAVE_PRIMARIA_SIMPLES](../imgs/DOC_IMAGES/CHAVE_PRIMARIA_SIMPLES.png)
+    ![CHAVE_PRIMARIA_SIMPLES](./imgs/A_LITTLE_KN/CHAVE_PRIMARIA_SIMPLES.png)
 
 - **Foreign Key:** Represents a column or set of columns in a table that references the primary key of another table. It establishes relationships between tables and ensures referential integrity in the database. It's the origin of the relationship between tables.
 
-    ![CHAVE_ESTRANGEIRA](../imgs/DOC_IMAGES/CHAVE_ESTRANGEIRA.png)
+    ![CHAVE_ESTRANGEIRA](./imgs/A_LITTLE_KN/CHAVE_ESTRANGEIRA.png)
 
 - **Alternate Key:** In certain cases, the values of a column cannot be repeated, even if that column is not part of the primary key. These columns are known as alternate keys.
 
@@ -243,7 +243,7 @@ The fundamental concept for establishing relationships between rows of tables in
 
 Transformation occurs based on the maximum cardinality used to classify binary relationships.
 
-![TRANSFORMACAO](../imgs/DOC_IMAGES/TRANSFORMACAO.png)
+![TRANSFORMACAO](./imgs/A_LITTLE_KN/TRANSFORMACAO.png)
 
 The result of the transformation of the relationship in the logical model can be divided into:
 
@@ -255,15 +255,15 @@ The result of the transformation of the relationship in the logical model can be
 
 #### One-to-One Relationships (Conceptual)
 
-![RELACIONAMENTO_1_1](../imgs/DOC_IMAGES/RELACIONAMENTO_1_1.png)
+![RELACIONAMENTO_1_1](./imgs/A_LITTLE_KN/RELACIONAMENTO_1_1.png)
 
 #### One-to-Many Relationships (Conceptual)
 
-![RELACIONAMENTO_1_N](../imgs/DOC_IMAGES/RELACIONAMENTO_1_N.png)
+![RELACIONAMENTO_1_N](./imgs/A_LITTLE_KN/RELACIONAMENTO_1_N.png)
 
 #### Many-to-Many Relationships (Conceptual)
 
-![RELACIONAMENTO_N_N](../imgs/DOC_IMAGES/RELACIONAMENTO_N_N.png)
+![RELACIONAMENTO_N_N](./imgs/A_LITTLE_KN/RELACIONAMENTO_N_N.png)
 
 ### Foreign Keys
 
@@ -288,11 +288,11 @@ CREATE TABLE employee (
 
 ### Transformation - One-to-One Relationships
 
-![TRANSFORMACAO_RL_1_1](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1.png)
+![TRANSFORMACAO_RL_1_1](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_1_1.png)
 
 #### Table Merge
 
-![TRANSFORMACAO_RL_1_1_FUSAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_1_FUSAO.png)
+![TRANSFORMACAO_RL_1_1_FUSAO](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_1_1_FUSAO.png)
 
 ***Example:***
 
@@ -306,11 +306,11 @@ CREATE TABLE ENTITY_AB (
 
 ### Transformation - One-to-Many Relationship
 
-![TRANSFORMACAO_RL_1_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N.png)
+![TRANSFORMACAO_RL_1_N](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_1_N.png)
 
 #### Column Addition
 
-![TRANSFORMACAO_RL_1_N_ADICAO](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_1_N_ADICAO.png)
+![TRANSFORMACAO_RL_1_N_ADICAO](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_1_N_ADICAO.png)
 
 ***Example:***
 
@@ -330,11 +330,11 @@ CREATE TABLE ENTITY_B (
 
 ### Transformation - Many-to-Many Relationship
 
-![TRANSFORMACAO_RL_N_N](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N.png)
+![TRANSFORMACAO_RL_N_N](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_N_N.png)
 
 #### Own Table
 
-![TRANSFORMACAO_RL_N_N_TB_PROPRIA](../imgs/DOC_IMAGES/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
+![TRANSFORMACAO_RL_N_N_TB_PROPRIA](./imgs/A_LITTLE_KN/TRANSFORMACAO_RL_N_N_TB_PROPRIA.png)
 
 ***Example:***
 

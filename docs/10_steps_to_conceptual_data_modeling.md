@@ -1,6 +1,6 @@
 # 10 Steps to Conceptual Data Modeling
 
-![MAGAZINE](../imgs/DOC_IMAGES/10_STEPS/MAGAZINE.png)
+![MAGAZINE](./imgs/10_STEPS/MAGAZINE.png)
 
 Based on the SQL Magazine Article 16 - 10 steps to creating a conceptual database model.
 
@@ -50,13 +50,13 @@ Identifying the physical relationships and defining their types through verbs or
 
 Establishing the degree of relationship between the entities.
 
-![10STEPS_RELATIONSHIP](../imgs/DOC_IMAGES/TIPOS_RELACAO.png)
+![10STEPS_RELATIONSHIP](./imgs/A_LITTLE_KN/TIPOS_RELACAO.png)
 
 ## Step 9:
 
 Establishing the cardinality ratio of the relationship between entities.
 
-![READING_MODE](../imgs/DOC_IMAGES/CARDINALIDADE_REPRESENTACAO_2.png)
+![READING_MODE](./imgs/A_LITTLE_KN/CARDINALIDADE_REPRESENTACAO_2.png)
 
 ## Step 10:
 
