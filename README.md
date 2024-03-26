@@ -54,15 +54,15 @@ sudo mysql -u root -p
 
 ## Main Functionalities:
 
-- **[DDL:](./sql/DDL.md)** Data Definition Language;
+- **[DDL:](./sql/ddl/DDL.md)** Data Definition Language;
 
-- **[DML:](./sql/DML.md)** Data Manipulation Language;
+- **[DML:](./sql/dml/DML.md)** Data Manipulation Language;
 
-- **[DQL:](./sql/DQL.md)** Data Query Language;
+- **[DQL:](./sql/dql/DQL.md)** Data Query Language;
 
-- **[DCL:](./sql/DCL.md)** Data Control Language;
+- **[DCL:](./sql/dcl/DCL.md)** Data Control Language;
 
-- **[DTL:](./sql/DTL.md)** Data Transaction Language.
+- **[DTL:](./sql/dtl/DTL.md)** Data Transaction Language.
 
 ## Other Docs
 
