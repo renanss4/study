@@ -27,7 +27,7 @@ X * Y = {
 
 Essencialmente, cada elemento de X é combinado com cada elemento de Y para formar todos os possíveis pares ordenados.
 
-![CARTESIANO1](../../imgs/DQL/CARTESIANO1.png)
+![CARTESIANO1](./imgs/CARTESIANO1.png)
 
 ### Exemplo em SQL
 
@@ -42,7 +42,7 @@ Neste exemplo, a consulta SQL retorna todas as combinações possíveis de linha
 - **Colunas resultantes:** 5 colunas da tabela "veiculo" + 3 colunas da tabela "marca" = 8 colunas no total.
 - **Linhas resultantes:** Como há 6 linhas na tabela "veiculo" e 2 linhas na tabela "marca", o produto cartesiano resulta em 12 linhas.
 
-![CARTESIANO2](../../imgs/DQL/CARTESIANO2.png)
+![CARTESIANO2](./imgs/CARTESIANO2.png)
 
 ## Consultas Joins
 
@@ -58,9 +58,9 @@ Por outro lado, as junções propriamente ditas trazem apenas as informações v
 
 Na prática, as junções fornecem resultados mais precisos e relevantes, filtrando apenas as combinações que atendem às condições estabelecidas, enquanto o produto cartesiano pode gerar um grande número de combinações, incluindo muitas que podem não ser úteis ou significativas para a consulta em questão.
 
-![JUNCAO1](../../imgs/DQL/JUNCAO1.png)
+![JUNCAO1](./imgs/JUNCAO1.png)
 
-![SQL_JOINS](../../imgs/DQL/SQL_JOINS.png)
+![SQL_JOINS](./imgs/SQL_JOINS.png)
 
 Quando precisamos acessar informações de duas tabelas relacionadas em SQL, utilizamos recursos como junção (JOIN) ou produto cartesiano.
 
@@ -68,7 +68,7 @@ Uma junção de tabelas cria uma pseudo-tabela derivada de duas ou mais tabelas,
 
 > **Atenção:** É importante ressaltar que ao realizar uma junção, geralmente preferimos unir duas tabelas com base nos campos que são chaves estrangeiras (Foreign Key) existentes entre elas. Isso garante uma relação direta e significativa entre os dados das tabelas envolvidas.
 
-![MODELOS_JOIN](../../imgs/DQL/MODELOS_JOIN.png)
+![MODELOS_JOIN](./imgs/MODELOS_JOIN.png)
 
 ```sql
 CREATE TABLE DEPARTAMENTO (
@@ -84,13 +84,13 @@ CREATE TABLE FUNCIONARIO (
 );
 ```
 
-![EXEMPLO_JOIN](../../imgs/DQL/EXEMPLO_JOIN.png)
+![EXEMPLO_JOIN](./imgs/EXEMPLO_JOIN.png)
 
 ## Inner Join
 
 As junções INNER JOIN se caracterizam por uma seleção que retorna apenas os dados que atendem à condição de junção. Isso significa que apenas os registros que possuem correspondência nas duas tabelas envolvidas serão incluídos no resultado.
 
-![INNER_JOIN](../../imgs/DQL/INNER_JOIN.png)
+![INNER_JOIN](./imgs/INNER_JOIN.png)
 
 ### Exemplo
 
@@ -119,7 +119,7 @@ A INNER JOIN B = {(4,4), (6,6)}
 
 Apenas os pares onde o primeiro elemento está em A e o segundo elemento está em B são incluídos no resultado, conforme a condição de junção estabelecida.
 
-![EXEMPLO_INNER_JOIN](../../imgs/DQL/EXEMPLO_INNER_JOIN.png)
+![EXEMPLO_INNER_JOIN](./imgs/EXEMPLO_INNER_JOIN.png)
 ### Consulta SQL e Criação de Tabelas
 
 #### Criação das Tabelas
@@ -154,13 +154,13 @@ FROM
 
 ### Resultado da Consulta
 
-![EXEMPLO_INNER_JOIN2](../../imgs/DQL/EXEMPLO_INNER_JOIN2.png)
+![EXEMPLO_INNER_JOIN2](./imgs/EXEMPLO_INNER_JOIN2.png)
 
 ## Left Join
 
 As junções externas LEFT JOIN se caracterizam por uma seleção que retorna todos os dados da tabela da ESQUERDA (left) e apenas os dados que atendem à condição de junção da tabela da DIREITA.
 
-![LEFT_JOIN](../../imgs/DQL/LEFT_JOIN.png)
+![LEFT_JOIN](./imgs/LEFT_JOIN.png)
 
 ### Exemplo e Consulta
 
@@ -217,7 +217,7 @@ FROM
 
 As junções externas RIGHT OUTER JOIN se caracterizam por uma seleção que retorna todos os dados da tabela da DIREITA (right) e apenas os dados que atendem à condição de junção da tabela da ESQUERDA.
 
-![RIGHT_JOIN](../../imgs/DQL/RIGHT_JOIN.png)
+![RIGHT_JOIN](./imgs/RIGHT_JOIN.png)
 
 ### Exemplo e Consulta
 

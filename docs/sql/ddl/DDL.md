@@ -22,7 +22,7 @@ CREATE DATABASE nome_do_banco_de_dados;
 USE nome_do_banco_de_dados;
 ```
 
-![USE_DB](../../imgs/DDL/USE_DB.png)
+![USE_DB](./imgs/USE_DB.png)
 
 ### Mostrar as tabelas já criadas
 
@@ -30,7 +30,7 @@ USE nome_do_banco_de_dados;
 SHOW TABLES;
 ```
 
-![SHOW_TABLES](../../imgs/DDL/SHOW_TABLES.png)
+![SHOW_TABLES](./imgs/SHOW_TABLES.png)
 
 ### Mostrar a estrutura das Tabelas
 
@@ -38,7 +38,7 @@ SHOW TABLES;
 DESCRIBE nome_da_tabela;
 ```
 
-![DESCRIBE_TABLE](../../imgs/DDL/DESCRIBE_TABLE.png)
+![DESCRIBE_TABLE](./imgs/DESCRIBE_TABLE.png)
 
 ## Tabelas
 
