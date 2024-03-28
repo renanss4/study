@@ -1,30 +1,30 @@
-# Linguagem de Definição de Dados (DDL)
+# Data Definition Language (DDL)
 
-A Linguagem de Definição de Dados (DDL) inclui comandos para definir, alterar e remover a estrutura dos objetos de banco de dados, como tabelas, índices, visões e restrições. Esses comandos permitem aos usuários definir a estrutura dos dados que serão armazenados no banco de dados.
+The Data Definition Language (DDL) includes commands to define, alter, and remove the structure of database objects such as tables, indexes, views, and constraints. These commands allow users to define the structure of the data to be stored in the database.
 
-Exemplos de comandos DDL em SQL incluem:
+Examples of DDL commands in SQL include:
 
-- **CREATE`**: Para criar novos objetos de banco de dados, como tabelas, índices e visões.
-- **ALTER**: Para modificar a estrutura de objetos existentes no banco de dados, como adicionar, modificar ou excluir colunas de uma tabela.
-- **DROP**: Para remover objetos de banco de dados, como tabelas, índices e visões.
+- **CREATE**: To create new database objects such as tables, indexes, and views.
+- **ALTER**: To modify the structure of existing objects in the database, such as adding, modifying, or deleting columns from a table.
+- **DROP**: To remove database objects such as tables, indexes, and views.
 
-## Banco de Dados
+## Database
 
-### Criação de Banco de Dados:
+### Creating a Database:
 
 ```sql
-CREATE DATABASE nome_do_banco_de_dados;
+CREATE DATABASE database_name;
 ```
 
-### Selecionar o Banco de Dados para criação de tabelas
+### Selecting the Database for Table Creation
 
 ```sql
-USE nome_do_banco_de_dados;
+USE database_name;
 ```
 
 ![USE_DB](./imgs/USE_DB.png)
 
-### Mostrar as tabelas já criadas
+### Showing Already Created Tables
 
 ```sql
 SHOW TABLES;
@@ -32,298 +32,298 @@ SHOW TABLES;
 
 ![SHOW_TABLES](./imgs/SHOW_TABLES.png)
 
-### Mostrar a estrutura das Tabelas
+### Showing the Structure of Tables
 
 ```sql
-DESCRIBE nome_da_tabela;
+DESCRIBE table_name;
 ```
 
 ![DESCRIBE_TABLE](./imgs/DESCRIBE_TABLE.png)
 
-## Tabelas
+## Tables
 
-### Criação de Tabelas - Campos
+### Creating Tables - Fields
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo1 tipo_campo opcoes_campo,
-    nome_campo2 tipo_campo opcoes_campo,
-    nome_campo_n tipo_campo opcoes_campo
+CREATE TABLE table_name (
+    field_name1 field_type field_options,
+    field_name2 field_type field_options,
+    field_name_n field_type field_options
 );
 ```
 
-## Domínio ou Tipo de Dados - MySQL
+## Domain or Data Type - MySQL
 
-Aqui está a tabela com os tipos de dados e suas descrições:
+Here is the table with data types and their descriptions:
 
-| Tipo de Dado | Descrição                                           |
-|--------------|-----------------------------------------------------|
-| **CHAR(n)**      | Campo texto limitado, sempre preenchido à direita com espaços, com tamanho fixo n. |
-| **VARCHAR(n)**   | Campo texto de tamanho variável, com tamanho máximo n. |
-| **INT**          | Inteiro de tamanho normal.                           |
-| **FLOAT(p)**     | Número de ponto flutuante pequeno, com precisão p.   |
-| **DOUBLE(n, p)** | Número de ponto flutuante de tamanho normal, com precisão n e p. |
-| **DECIMAL(n, p)**| Número de ponto flutuante de tamanho normal com tamanho fixo, com precisão n e p. |
-| **DATE**         | Tipo de dado para armazenar datas no formato AAAA-MM-DD. |
-| **TIME**         | Tipo de dado para armazenar horas no formato HH:NN:SS. |
-| **DATETIME**     | Combinação de data e hora no formato AAAA-MM-DD HH:NN:SS. |
-| **TIMESTAMP**    | Combinação de data e hora no formato AAAA-MM-DD HH:NN:SS. |
-| **ENUM('val1', 'val2', ..., 'valN')** | Enumeração de valores, aceitando um valor do tipo texto ou número inteiro. |
-| **BLOB**         | Campo para armazenar imagem ou texto muito grande, com tamanho máximo de 4294967295 ou 4GB. |
+| Data Type    | Description                                             |
+|--------------|---------------------------------------------------------|
+| **CHAR(n)**      | Fixed-length text field, always right-padded with spaces, with fixed size n. |
+| **VARCHAR(n)**   | Variable-length text field, with maximum size n. |
+| **INT**          | Normal-sized integer.                           |
+| **FLOAT(p)**     | Small floating-point number, with precision p.   |
+| **DOUBLE(n, p)** | Normal-sized floating-point number, with precision n and p. |
+| **DECIMAL(n, p)**| Fixed-size normal-sized floating-point number, with precision n and p. |
+| **DATE**         | Data type for storing dates in the format YYYY-MM-DD. |
+| **TIME**         | Data type for storing time in the format HH:MM:SS. |
+| **DATETIME**     | Combination of date and time in the format YYYY-MM-DD HH:MM:SS. |
+| **TIMESTAMP**    | Combination of date and time in the format YYYY-MM-DD HH:MM:SS. |
+| **ENUM('val1', 'val2', ..., 'valN')** | Enumeration of values, accepting a value of text or integer type. |
+| **BLOB**         | Field for storing large images or text, with maximum size of 4294967295 or 4GB. |
 
-## Integridade de dados a nível de campo ou atributo
+## Field-Level Data Integrity
 
-### **NOT NULL:** Não permissão a inclusão de valores nulos, torna o campo obrigatório.
+### **NOT NULL:** Disallows inclusion of null values, making the field mandatory.
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo NOT NULL
+CREATE TABLE table_name (
+    field_name field_type NOT NULL
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE aluno (
-    nome varchar(100) NOT NULL
+CREATE TABLE student (
+    name varchar(100) NOT NULL
 );
 ```
 
-### **AUTO_INCREMENT:** Gera um numero incremental a cada novo registro.
+### **AUTO_INCREMENT:** Generates an incremental number for each new record.
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo AUTO_INCREMENT
+CREATE TABLE table_name (
+    field_name field_type AUTO_INCREMENT
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE aluno (
-    codigo int AUTO_INCREMENT
+CREATE TABLE student (
+    code int AUTO_INCREMENT
 );
 ```
 
-### **UNSIGNED:** Usado para permitir somente valores positivos.
+### **UNSIGNED:** Used to allow only positive values.
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo UNSIGNED
+CREATE TABLE table_name (
+    field_name field_type UNSIGNED
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE pessoa (
-    idade int UNSIGNED
+CREATE TABLE person (
+    age int UNSIGNED
 );
 ```
 
-### **UNIQUE:** Garante a unicidade do valor de um campo na tabela.
+### **UNIQUE:** Ensures the uniqueness of a field value in the table.
     
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo UNIQUE
+CREATE TABLE table_name (
+    field_name field_type UNIQUE
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE pessoa (
+CREATE TABLE person (
     cpf char(11) UNIQUE
 );
 ```
 
-### **DEFAULT(valor):** Valores assumidos em uma inserção caso não houver indicação explícita.
+### **DEFAULT(value):** Values assumed on insertion if no explicit indication is given.
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo DEFAULT (valor)
+CREATE TABLE table_name (
+    field_name field_type DEFAULT (value)
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE aluno (
-    dt_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE student (
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
-### **ZEROFILL:** Preenche espaços vazios da coluna com o número zero.
+### **ZEROFILL:** Fills empty spaces of the column with zero.
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo ZEROFILL
+CREATE TABLE table_name (
+    field_name field_type ZEROFILL
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE conta(
-    taxa int ZEROFILL
+CREATE TABLE account(
+    fee int ZEROFILL
 );
 ```
 
-## Chaves primárias
+## Primary Keys
 
-Temos dois tipos de chaves primárias:
+We have two types of primary keys:
 
-**Simples:** É formada por apenas um campo da tabela.
+**Simple:** Formed by only one field of the table.
 
-**Composta:** Composta por dois ou mais campos da tabela.
+**Composite:** Composed of two or more fields of the table.
 
-### Chaves primárias Simples
+### Simple Primary Keys
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo PRIMARY KEY
+CREATE TABLE table_name (
+    field_name field_type PRIMARY KEY
 );
 ```
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo ,
+CREATE TABLE table_name (
+    field_name field_type ,
     
-    PRIMARY KEY (nome_campo)
+    PRIMARY KEY (field_name)
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE aluno (
-    codigo int PRIMARY KEY
+CREATE TABLE student (
+    code int PRIMARY KEY
 );
 ```
 
 ```sql
-CREATE TABLE aluno (
-    codigo int,
+CREATE TABLE student (
+    code int,
     
-    PRIMARY KEY (codigo)
+    PRIMARY KEY (code)
 );
 ```
 
-### Chaves primárias Composta
+### Composite Primary Keys
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo ,
+CREATE TABLE table_name (
+    field_name field_type ,
     
-    PRIMARY KEY (nome_campo)
+    PRIMARY KEY (field_name)
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE itens_pedido (
-    cod_pedido int,
-    cod_produto int,
+CREATE TABLE order_items (
+    order_code int,
+    product_code int,
     
-    PRIMARY KEY (cod_pedido,cod_produto)
+    PRIMARY KEY (order_code, product_code)
 );
 ```
 
-### Chaves Estrangeira
+### Foreign Keys
 
 ```sql
-CREATE TABLE nome_da_tabela (
-    nome_campo tipo_campo ,
+CREATE TABLE table_name (
+    field_name field_type ,
     
-    FOREIGN KEY (nome_campo)
-    REFERENCES nome_tabela_relacionada (nome_campo_relacionado)
+    FOREIGN KEY (field_name)
+    REFERENCES related_table_name (related_field_name)
 );
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE funcionario (
-    departamento int,
+CREATE TABLE employee (
+    department int,
 
-    FOREIGN KEY (departamento) REFERENCES departamento (codigo)
+    FOREIGN KEY (department) REFERENCES department (code)
 );
 ```
 
-## Alteração em Tabelas já criadas
+## Alteration on Already Created Tables
 
-### Adicionar um novo campo em uma tabela
-
-```sql
-ALTER TABLE nome_tabela 
-ADD COLUMN nome_campo tipo_atributo;
-```
-
-***Exemplo:***
+### Adding a New Field to a Table
 
 ```sql
-ALTER TABLE aluno 
-ADD COLUMN endereco varchar(75) not null;
+ALTER TABLE table_name 
+ADD COLUMN field_name attribute_type;
 ```
 
-## Remover um campo em uma tabela 
-
-> **Atenção removendo esse campo, será excluído todos os dados contido neste campo, para todos os registros.**
+***Example:***
 
 ```sql
-ALTER TABLE nome_tabela 
-DROP COLUMN nome_campo;
+ALTER TABLE student 
+ADD COLUMN address varchar(75) not null;
 ```
-***Exemplo:***
+
+### Removing a Field from a Table 
+
+> **Attention: Removing this field will delete all data contained in this field, for all records.**
 
 ```sql
-ALTER TABLE aluno 
-DROP COLUMN endereco;
+ALTER TABLE table_name 
+DROP COLUMN field_name;
 ```
-
-Caso o campo seja utilizado em um índice ou chave, não será permitido a remoção.
-
-## Adicionar uma chave primária em um campo já existente
+***Example:***
 
 ```sql
-ALTER TABLE nome_tabela 
-ADD PRIMARY KEY (nome_campo);
+ALTER TABLE student 
+DROP COLUMN address;
 ```
 
-***Exemplo:***
+If the field is used in an index or key, removal will not be permitted.
+
+### Adding a Primary Key to an Existing Field
 
 ```sql
-ALTER TABLE aluno 
-ADD PRIMARY KEY (aluno);
+ALTER TABLE table_name 
+ADD PRIMARY KEY (field_name);
 ```
 
-Adicionar uma chave estrangeira em um campo já existente.
+***Example:***
 
 ```sql
-ALTER TABLE nome_tabela 
-ADD FOREIGN KEY (nome_campo) REFERENCES nome_tabela (nome_campo);
+ALTER TABLE student 
+ADD PRIMARY KEY (student_id);
 ```
 
-***Exemplo:***
+Adding a Foreign Key to an Existing Field.
 
 ```sql
-ALTER TABLE funcionario
-ADD FOREIGN KEY (departamentocod) REFERENCES departamento (codigo);
+ALTER TABLE table_name 
+ADD FOREIGN KEY (field_name) REFERENCES related_table (related_field_name);
 ```
 
-## Remoção de Tabelas já criadas
-
-> **Atenção removendo uma tabela, será excluído todos os dados contido!**
+***Example:***
 
 ```sql
-DROP TABLE nome_tabela;
+ALTER TABLE employee
+ADD FOREIGN KEY (department_code) REFERENCES department (code);
 ```
 
-***Exemplo:***
+## Removal of Already Created Tables
+
+> **Attention: Removing a table will delete all contained data!**
 
 ```sql
-DROP TABLE aluno;
+DROP TABLE table_name;
 ```
 
-Caso a tabela seja utilizada em um relacionamento, não será permitido a remoção!
+***Example:***
+
+```sql
+DROP TABLE student;
+```
+
+If the table is used in a relationship, removal will not be permitted!
