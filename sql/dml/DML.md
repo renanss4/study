@@ -1,156 +1,155 @@
-# Linguagem de Manipulação de Dados (DML)
+# Data Manipulation Language (DML)
 
-A Linguagem de Manipulação de Dados (DML) inclui comandos para inserir, remover, atualizar e consultar os dados armazenados nas tabelas de um banco de dados. Esses comandos permitem aos usuários realizar operações sobre os dados, como adicionar novos registros, modificar registros existentes, excluir registros ou consultar informações específicas.
+The Data Manipulation Language (DML) includes commands to insert, delete, update, and query data stored in the tables of a database. These commands allow users to perform operations on the data, such as adding new records, modifying existing records, deleting records, or querying specific information.
 
-Exemplos de comandos DML em SQL incluem:
+Examples of DML commands in SQL include:
 
-- **INSERT**: Para adicionar novos registros a uma tabela.
-- **DELETE**: Para remover registros de uma tabela.
-- **UPDATE**: Para modificar os dados de registros existentes em uma tabela.
-- **SELECT**: Para consultar e recuperar dados específicos de uma ou mais tabelas.
+- **INSERT**: To add new records to a table.
+- **DELETE**: To remove records from a table.
+- **UPDATE**: To modify the data of existing records in a table.
+- **SELECT**: To query and retrieve specific data from one or more tables.
 
-## Inserção de registros
+## Inserting Records
 
 ```sql
-INSERT INTO nome_tabela (nome_campo_a, nome_campo_b, ..., nome_campo_n) VALUES (valor_campo_a, valor_campo_b, ..., valor_campo_n);
+INSERT INTO table_name (field_name_a, field_name_b, ..., field_name_n) VALUES (value_field_a, value_field_b, ..., value_field_n);
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-CREATE TABLE CLIENTE (
-	IDCLIENTE INT PRIMARY KEY AUTO_INCREMENT,
-	NOME VARCHAR(10),
-	SEXO CHAR(1),
-	IDADE INT,
-	CIDADE VARCHAR(20)
+CREATE TABLE CLIENT (
+	IDCLIENT INT PRIMARY KEY AUTO_INCREMENT,
+	NAME VARCHAR(10),
+	GENDER CHAR(1),
+	AGE INT,
+	CITY VARCHAR(20)
 );
 
-INSERT INTO CLIENTE ( NOME, IDADE) VALUES (‘JOÃO’, 12);
+INSERT INTO CLIENT (NAME, AGE) VALUES ('JOHN', 12);
 ```
 
-**Atenção:**
+**Attention:**
 
-Qualquer valor que possa ir em coluna do tipo **VARCHAR**, **CHAR**, **DATE**, **TIME**, **DATETIME**, **TIMESTAMP** ou **BLOB** deve ficar entre aspas simples.
+Any value that can go into a column of type **VARCHAR**, **CHAR**, **DATE**, **TIME**, **DATETIME**, **TIMESTAMP**, or **BLOB** must be enclosed in single quotes.
 
-Os valores devem ser listados exatamente na mesma ordem que os nomes das colunas.
+The values must be listed exactly in the same order as the column names.
 
-É possível deixar algumas colunas de fora do INSERT, desde que não sejam obrigatórias.
+It's possible to leave some columns out of the INSERT, as long as they are not mandatory.
 
-## Apagando registros
+## Deleting Records
 
-O comando **DELETE** serve para apagar dados da tabela. Esse comando utiliza a cláusula **WHERE** para restringir os registros que serão excluídos.
+The **DELETE** command is used to delete data from the table. This command uses the **WHERE** clause to restrict the records that will be deleted.
 
 ```sql
-DELETE FROM nome_tabela WHERE condição;
+DELETE FROM table_name WHERE condition;
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-DELETE FROM CLIENTE WHERE IDCLIENTE = 1;
+DELETE FROM CLIENT WHERE IDCLIENT = 1;
 ```
 
 ## WHERE
 
-Operadores para a cláusula WHERE:
+Operators for the WHERE clause:
 
 
-| Operador | Descrição          |
+| Operator | Description          |
 |----------|--------------------|
-| **=**        | Igual              |
-| **<>**       | Diferente          |
-| **>**        | Maior que          |
-| **<**        | Menor que          |
-| **>=**       | Maior e igual a    |
-| **<=**       | Menor e igual a    |
-| **IN**       | Lista              |
-| **LIKE**     | Que contenha       |
-| **NOT**      | Negação            |
-| **IS NULL**  | Somente valores nulos |
-| **BETWEEN**  | Entre valores      |
+| **=**        | Equal              |
+| **<>**       | Not equal          |
+| **>**        | Greater than       |
+| **<**        | Less than          |
+| **>=**       | Greater than or equal to    |
+| **<=**       | Less than or equal to    |
+| **IN**       | In a list          |
+| **LIKE**     | Contains       |
+| **NOT**      | Negation            |
+| **IS NULL**  | Only null values |
+| **BETWEEN**  | Between values      |
 
-## Alterando dados
+## Updating Data
 
-O comando **UPDATE** serve para atualizar uma ou mais colunas, atribuindo valores novos. Esse comando utiliza a cláusula **WHERE** para restringir os registros que serão alterados.
+The **UPDATE** command is used to update one or more columns, assigning new values. This command uses the **WHERE** clause to restrict the records that will be changed.
 
 ```sql
-UPDATE nome_tabela SET nome_campo = valor 
-WHERE condição;
+UPDATE table_name SET field_name = value WHERE condition;
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-UPDATE CLIENTE SET SEXO = ‘F’ WHERE IDCLIENTE = 7 AND SEXO IS NULL;
+UPDATE CLIENT SET GENDER = 'F' WHERE IDCLIENT = 7 AND GENDER IS NULL;
 ```
 
-Para alterar mais de uma coluna utilize a vírgula.
+To update more than one column, use a comma.
 
 ```sql
-UPDATE nome_tabela SET 
-	nome_campo_1 = valor_1,
-	nome_campo_2 = valor_2,
-WHERE condição;
+UPDATE table_name SET 
+	field_name_1 = value_1,
+	field_name_2 = value_2,
+WHERE condition;
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-UPDATE CLIENTE SET SEXO = ‘F’, IDADE = 21 
-WHERE IDCLIENTE = 7;
+UPDATE CLIENT SET GENDER = 'F', AGE = 21 
+WHERE IDCLIENT = 7;
 ```
 
-## Consultando dados
+## Querying Data
 
 ```sql
-SELECT * FROM nome_tabela
+SELECT * FROM table_name
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-SELECT * FROM CLIENTE
+SELECT * FROM CLIENT
 ```
 
 ![DML_SELECT_*_FROM](./imgs/DML_SELECT_FROM.png)
 
 ### WHERE
 
-A cláusula **WHERE** indica ao SQL que deve procurar algo especifico. Ela limita os resultados, exibe somente as linha que são compatíveis com a condição estabelecida.
+The **WHERE** clause tells SQL to search for something specific. It limits the results, displaying only the rows that match the established condition.
 
 ```sql
-SELECT * FROM nome_tabela WHERE nome_campo operador valor
+SELECT * FROM table_name WHERE field_name operator value
 ```
 
-***Exemplo:***
+***Example:***
 
 ```sql
-SELECT * FROM CLIENTE WHERE CODIGO = 1
+SELECT * FROM CLIENT WHERE CODE = 1
 ```
 
-### Operador OR e AND
+### OR and AND Operators
 
-É possível utilizar os operadores lógicos OR e AND para combinar mais de uma condição na cláusula WHERE;
+You can use the logical operators OR and AND to combine more than one condition in the WHERE clause.
 
 ```sql
-SELECT * FROM CLIENTE
+SELECT * FROM CLIENT
 WHERE
-	(IDADE >= 18 AND SEXO = ‘M’) OR
-	(IDADE >= 21 AND SEXO = ‘F’)
+	(AGE >= 18 AND GENDER = 'M') OR
+	(AGE >= 21 AND GENDER = 'F')
 ```
 
 ![DML_OR_AND](./imgs/DML_OR_AND.png)
 
 ### Group By
 
-O cláusula **GROUP BY** serve para agrupar os resultado em uma consulta SQL;
+The **GROUP BY** clause is used to group the results in a SQL query.
 
 ```sql
 SELECT 
-    FUNCIONARIO,
-    NOME,
-    DEPARTAMENTO 
+    EMPLOYEE,
+    NAME,
+    DEPARTMENT 
 FROM;
 ```
 
@@ -158,85 +157,85 @@ FROM;
 
 ```sql
 SELECT
-	COUNT(FUNCIONARIO),
-	DEPARTAMENTO
+	COUNT(EMPLOYEE),
+	DEPARTMENT
 FROM
-	FUNCIONARIO
+	EMPLOYEE
 GROUP BY 
-	DEPARTAMENTO;
+	DEPARTMENT;
 ```
 
 ![DML_SELECT_WITH_GROUP_BY](./imgs/DML_SELECT_WITH_GROUP_BY.png)
 
-### Group By e suas Funções
+### Group By and its Functions
 
-| Função        | Descrição                                           |
+| Function        | Description                                           |
 |---------------|-----------------------------------------------------|
-| **COUNT**         | Retorna a quantidade de registros com valores não-NULL diferentes |
-| **AVG**           | Retorna o valor médio                               |
-| **MIN**           | Retorna o menor valor                               |
-| **MAX**           | Retorna o maior valor                               |
-| **SUM**           | Retorna a soma dos valores                          |
-| **GROUP_CONCAT**  | Retorna os valores agrupados, concatenados          |
+| **COUNT**         | Returns the number of records with different non-NULL values |
+| **AVG**           | Returns the average value                               |
+| **MIN**           | Returns the minimum value                               |
+| **MAX**           | Returns the maximum value                               |
+| **SUM**           | Returns the sum of values                               |
+| **GROUP_CONCAT**  | Returns the grouped, concatenated values               |
 
-### Ordenação
+### Ordering
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY NOME
+SELECT * FROM CLIENT ORDER BY NAME
 ```
 
 ![DML_ORDER_BY](./imgs/DML_ORDER_BY.png)
 
-#### ASC - Ascendentemente
+#### ASC - Ascending
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY idade ASC
+SELECT * FROM CLIENT ORDER BY AGE ASC
 ```
 
 ![DML_ORDER_BY_ASC](./imgs/DML_ORDER_BY_ASC.png)
 
-#### DESC - Descendentemente
+#### DESC - Descending
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY idade DESC
+SELECT * FROM CLIENT ORDER BY AGE DESC
 ```
 
 ![DML_ORDER_BY_DESC](./imgs/DML_ORDER_BY_DESC.png)
 
-#### Múltiplas colunas
+#### Multiple Columns
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY IDADE DESC, SEXO, NOME
+SELECT * FROM CLIENT ORDER BY AGE DESC, GENDER, NAME
 ```
 
 ![DML_ORDER_BY_MULTIPLAS_COLUNAS](./imgs/DML_ORDER_BY_MULTIPLAS_COLUNAS.png)
 
-#### LIMIT - quantidade
+#### LIMIT - quantity
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY NOME LIMIT 5
+SELECT * FROM CLIENT ORDER BY NAME LIMIT 5
 ```
 
 ![DML_ORDER_BY_LIMIT](./imgs/DML_ORDER_BY_LIMIT.png)
 
-#### LIMIT - inicio, quantidade
+#### LIMIT - start, quantity
 
 ```sql
-SELECT * FROM CLIENTE ORDER BY NOME LIMIT 4,3
+SELECT * FROM CLIENT ORDER BY NAME LIMIT 4,3
 ```
 
 ![DML_ORDER_BY_LIMIT_INI_FIM](./imgs/DML_ORDER_BY_LIMIT_INI_FIM.png)
 
-## Pseudônimos para Tabelas e Campos
+## Aliases for Tables and Fields
 
-Podemos criar pseudônimos para os nomes das tabelas assim fica mais fácil fazer referência. O mesmo pode acontecer com o nome das colunas.
+We can create aliases for table names to make references easier. The same can happen with column names.
 
-Para isso devemos utilizar a palavra reservada “AS” logo após o nome da tabela ou o nome da coluna. Pseudônimos para tabelas também são chamados de nomes correlacionais
+To do this, we must use the reserved word "AS" immediately after the table name or column name. Table aliases are also called correlation names.
 
-***Exemplo:***
+***Example:***
 
 ```sql
-SELECT NOME AS NM, IDADE FROM CLIENTE AS CL;
+SELECT NAME AS NM, AGE FROM CLIENT AS CL;
 ```
 
 ![DML_AS](./imgs/DML_AS.png)
