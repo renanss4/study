@@ -1,311 +1,315 @@
-# Stored Procedures e Functions
+# Stored Procedures and Functions
 
-Uma Stored Procedure e Function são um conjunto de comandos SQL que podem ser armazenados no servidor. Uma vez que isto tenha sido feito, os clientes não precisam de reenviar os comandos individuais mas podem fazer referência.
+A Stored Procedure and Function are a set of SQL commands that can be stored on the server. Once this is done, clients do not need to resend individual commands but can make a reference.
 
-Stored Procedure e Function podem fornecer um aumento no desempenho já que menos informação precisa ser enviada entre o servidor e o cliente. 
+Stored Procedures and Functions can provide a performance boost since less information needs to be sent between the server and the client.
 
-O lado negativo é que isto aumenta a carga no sistema do servidor de banco de dados, já que a maior parte do trabalho é feita no servidor e menor parte é feita do lado do cliente.
+The downside is that this increases the load on the database server system, as most of the work is done on the server side and less on the client side.
 
-## Criação de Stored Procedure:
+## Creating a Stored Procedure:
 
 ```sql
 DELIMITER $$
-CREATE PROCEDURE nome_procedure (parametro_1 ,..., OUT parametro_n)
+CREATE PROCEDURE procedure_name (parameter_1, ..., OUT parameter_n)
 BEGIN 
-	-- Corpo da stored procedure aqui
+	-- Body of the stored procedure here
 END $$
 DELIMITER ;
 ```
 
-**Exemplo:**
+**Example:**
 
 ```sql
 DELIMITER $$
-CREATE PROCEDURE sp_soma (Numero_1 int, Numero_2 int, OUT result int)
+CREATE PROCEDURE sp_sum (Number_1 int, Number_2 int, OUT result int)
 BEGIN 
-	set result = Numero_1 + Numero_2;
-END $$
-DELIMITER ;
-
-## Criação de Function:
-
-```sql
-DELIMITER $$
-CREATE FUNCTION nome_função(parametro_1,...,parametro_n) RETURNS tipo
-BEGIN 
-	return nome_variavel;
+	set result = Number_1 + Number_2;
 END $$
 DELIMITER ;
 ```
 
-Exemplo:
+## Creating a Function:
 
 ```sql
 DELIMITER $$
-CREATE FUNCTION fn_soma (Numero_1 int, Numero_2 int) RETURNS int
+CREATE FUNCTION function_name(parameter_1,...,parameter_n) RETURNS type
 BEGIN 
-	declare resultado int;
-	set resultado = Numero_1 + Numero_2;
-	return resultado;
-END $$
-DELIMITER ;
-
-## Declaração de variável:
-
-```sql
-declare nome_variavel tipo_variavel;
-```
-
-### Atribuir valor a variável:
-
-```sql
-Set nome_variavel = valor;
-```
-
-```sql
-SELECT nome_variavel = campo_tabela
-FROM		tabela
-WHERE 	condição;
-```
-
-### Alteração de Stored Procedure:
-
-```sql
-DELIMITER $$
-ALTER PROCEDURE nome_procedure (param_1,..., param_n OUT)
-BEGIN 
-	-- Corpo da stored procedure aqui
+	return variable_name;
 END $$
 DELIMITER ;
 ```
 
-### Alteração de Function:
+Example:
 
 ```sql
 DELIMITER $$
-ALTER FUNCTION nome_função (param_1,...,param_n) RETURNS tipo
+CREATE FUNCTION fn_sum (Number_1 int, Number_2 int) RETURNS int
 BEGIN 
-	return nome_variavel;
+	declare result int;
+	set result = Number_1 + Number_2;
+	return result;
 END $$
 DELIMITER ;
 ```
 
-### Remoção de Stored Procedure:
+## Variable Declaration:
 
 ```sql
-DROP PROCEDURE nome_procedure;
+declare variable_name variable_type;
 ```
 
-### Remoção de Function:
+### Assigning a Value to a Variable:
 
 ```sql
-DROP FUNCTION nome_função;
+Set variable_name = value;
 ```
-
-### Visualizar o conteúdo de uma Stored Procedure:
 
 ```sql
-SHOW CREATE PROCEDURE nome_procedure;
+SELECT variable_name = table_field
+FROM table
+WHERE condition;
 ```
 
-### Visualizar o conteúdo de uma Function:
+### Altering a Stored Procedure:
 
 ```sql
-SHOW CREATE FUNCTION nome_função;
+DELIMITER $$
+ALTER PROCEDURE procedure_name (param_1,..., param_n OUT)
+BEGIN 
+	-- Body of the stored procedure here
+END $$
+DELIMITER ;
 ```
 
-### Utilizar uma Stored Procedure:
+### Altering a Function:
 
 ```sql
-CALL nome_procedure (param_1,..., param_n OUT);
+DELIMITER $$
+ALTER FUNCTION function_name (param_1,...,param_n) RETURNS type
+BEGIN 
+	return variable_name;
+END $$
+DELIMITER ;
 ```
 
-### Utilizar uma Function:
+### Removing a Stored Procedure:
 
 ```sql
-SELECT nome_função (param_1,..., param_n);
+DROP PROCEDURE procedure_name;
 ```
 
-### Exemplo Prático de Stored Procedure:
+### Removing a Function:
 
-**Descrição:**
-Suponha que em um sistema de gerenciamento de uma loja online, você deseja criar uma stored procedure para calcular o valor total de uma compra, levando em consideração o preço dos itens, a quantidade e o desconto aplicável.
+```sql
+DROP FUNCTION function_name;
+```
+
+### Viewing the Content of a Stored Procedure:
+
+```sql
+SHOW CREATE PROCEDURE procedure_name;
+```
+
+### Viewing the Content of a Function:
+
+```sql
+SHOW CREATE FUNCTION function_name;
+```
+
+### Using a Stored Procedure:
+
+```sql
+CALL procedure_name (param_1,..., param_n OUT);
+```
+
+### Using a Function:
+
+```sql
+SELECT function_name (param_1,..., param_n);
+```
+
+### Practical Example of Stored Procedure:
+
+**Description:**
+Suppose in an online store management system, you want to create a stored procedure to calculate the total value of a purchase, taking into account the item prices, quantity, and applicable discount.
 
 ```sql
 DELIMITER $$
 
-CREATE PROCEDURE calcular_valor_total(
-    IN id_cliente INT,
-    OUT total_com_desconto DECIMAL(10, 2)
+CREATE PROCEDURE calculate_total_value(
+    IN customer_id INT,
+    OUT total_with_discount DECIMAL(10, 2)
 )
 BEGIN
-    DECLARE total_sem_desconto DECIMAL(10, 2);
-    DECLARE desconto_cliente DECIMAL(5, 2);
+    DECLARE total_without_discount DECIMAL(10, 2);
+    DECLARE customer_discount DECIMAL(5, 2);
     
-    -- Calcula o total sem desconto
-    SELECT SUM(preco * quantidade) INTO total_sem_desconto
-    FROM itens_compra
-    WHERE cliente_id = id_cliente;
+    -- Calculate total without discount
+    SELECT SUM(price * quantity) INTO total_without_discount
+    FROM purchase_items
+    WHERE customer_id = customer_id;
     
-    -- Calcula o desconto do cliente (exemplo hipotético)
-    SELECT desconto INTO desconto_cliente
-    FROM clientes
-    WHERE id = id_cliente;
+    -- Calculate customer discount (hypothetical example)
+    SELECT discount INTO customer_discount
+    FROM customers
+    WHERE id = customer_id;
     
-    -- Aplica o desconto ao total
-    SET total_com_desconto = total_sem_desconto * (1 - (desconto_cliente / 100));
+    -- Apply discount to total
+    SET total_with_discount = total_without_discount * (1 - (customer_discount / 100));
 END $$
 
 DELIMITER ;
 ```
 
-**Exemplo de Uso:**
+**Example of Usage:**
 ```sql
-CALL calcular_valor_total(123, @total_com_desconto);
-SELECT @total_com_desconto;
+CALL calculate_total_value(123, @total_with_discount);
+SELECT @total_with_discount;
 ```
 
-Neste exemplo, a stored procedure `calcular_valor_total` recebe o ID do cliente como entrada e retorna o valor total da compra após aplicar o desconto correspondente.
+In this example, the stored procedure `calculate_total_value` takes the customer ID as input and returns the total purchase value after applying the corresponding discount.
 
-### Exemplo Prático de Function:
+### Practical Example of Function:
 
-**Descrição:**
-Suponha que em um sistema de gerenciamento de uma loja online, você precise de uma função que retorne o preço total de um item, incluindo impostos e frete, para exibir na página de detalhes do produto.
+**Description:**
+Suppose in an online store management system, you need a function that returns the total price of an item, including taxes and shipping, to display on the product details page.
 
 ```sql
 DELIMITER $$
 
-CREATE FUNCTION calcular_preco_total(
-    preco_unitario DECIMAL(10, 2),
-    quantidade INT
+CREATE FUNCTION calculate_total_price(
+    unit_price DECIMAL(10, 2),
+    quantity INT
 ) RETURNS DECIMAL(10, 2)
 BEGIN
-    DECLARE preco_total DECIMAL(10, 2);
-    DECLARE taxa_imposto DECIMAL(5, 2);
-    DECLARE valor_frete DECIMAL(10, 2);
+    DECLARE total_price DECIMAL(10, 2);
+    DECLARE tax_rate DECIMAL(5, 2);
+    DECLARE shipping_cost DECIMAL(10, 2);
     
-    -- Obtém a taxa de imposto (exemplo hipotético)
-    SET taxa_imposto = 0.10;
+    -- Get tax rate (hypothetical example)
+    SET tax_rate = 0.10;
     
-    -- Obtém o valor do frete (exemplo hipotético)
-    SET valor_frete = 5.00;
+    -- Get shipping cost (hypothetical example)
+    SET shipping_cost = 5.00;
     
-    -- Calcula o preço total
-    SET preco_total = (preco_unitario * quantidade) * (1 + taxa_imposto) + valor_frete;
+    -- Calculate total price
+    SET total_price = (unit_price * quantity) * (1 + tax_rate) + shipping_cost;
     
-    RETURN preco_total;
+    RETURN total_price;
 END $$
 
 DELIMITER ;
 ```
 
-**Exemplo de Uso:**
+**Example of Usage:**
 
 ```sql
-SELECT calcular_preco_total(20.00, 3);
+SELECT calculate_total_price(20.00, 3);
 ```
 
-Neste exemplo, a função `calcular_preco_total` recebe o preço unitário do item e a quantidade desejada como entrada e retorna o preço total do item, considerando o imposto e o valor do frete. Isso pode ser útil para exibir o preço total de um produto em uma página de detalhes do produto.
+In this example, the `calculate_total_price` function takes the unit price of the item and the desired quantity as input and returns the total price of the item, considering the tax and shipping cost. This can be useful for displaying the total price of a product on a product details page.
 
-## Recursos dentro Stored Procedure:
+## Resources within Stored Procedure:
 
 ### IF
 
-A declaração `IF` permite que você execute um bloco de código se uma condição especificada for verdadeira ou outro bloco de código se a condição for falsa.
+The `IF` statement allows you to execute a block of code if a specified condition is true or another block of code if the condition is false.
 
 ```sql
-IF condição THEN
-	bloco_codigo
-ELSEIF condição THEN
-	bloco_codigo
+IF condition THEN
+	code_block
+ELSEIF condition THEN
+	code_block
 ELSE 
-	bloco_codigo
+	code_block
 END IF;
 ```
 
 ### WHILE
 
-A declaração `WHILE` permite que você execute repetidamente um bloco de código enquanto uma condição especificada for verdadeira.
+The `WHILE` statement allows you to repeatedly execute a block of code while a specified condition is true.
 
 ```sql
-WHILE condicao DO
-	bloco_codigo
+WHILE condition DO
+	code_block
 END WHILE;
 ```
 
 ### CASE
 
-A declaração `CASE` permite que você execute diferentes blocos de código com base no valor de uma variável ou expressão.
+The `CASE` statement allows you to execute different code blocks based on the value of a variable or expression.
 
 ```sql
-CASE variável
-	WHEN valor THEN bloco_codigo
-	WHEN valor THEN bloco_codigo
-	ELSE bloco_codigo
+CASE variable
+	WHEN value THEN code_block
+	WHEN value THEN code_block
+	ELSE code_block
 END CASE;
 ```
 
 ### REPEAT
 
-A declaração `REPEAT` permite que você execute um bloco de código repetidamente até que uma condição especificada seja verdadeira.
+The `REPEAT` statement allows you to repeatedly execute a block of code until a specified condition is true.
 
 ```sql
 REPEAT
-	bloco_codigo
-	UNTIL condicao
+	code_block
+	UNTIL condition
 END REPEAT;
 ```
 
 ### Loop
 
-A declaração `LOOP` permite que você execute um bloco de código repetidamente até que uma condição seja satisfeita. Pode ser utilizado em conjunto com `LEAVE` para sair do loop e `ITERATE` para avançar para a próxima iteração.
+The `LOOP` statement allows you to repeatedly execute a block of code until a condition is met. It can be used in conjunction with `LEAVE` to exit the loop and `ITERATE` to move to the next iteration.
 
 ```sql
-variavel_loop LOOP
+loop_variable LOOP
 	
-	bloco_codigo
+	code_block
 
 END LOOP;
 
-Encerra o loop:
-LEAVE variavel_loop;
+Exit the loop:
+LEAVE loop_variable;
 
-Faz mais uma interação no loop:
-ITERATE variavel_loop;
+Do one more iteration in the loop:
+ITERATE loop_variable;
 ```
 
 ### CURSOR
 
-Um cursor é um objeto que permite percorrer os resultados de uma consulta SQL linha por linha.
+A cursor is an object that allows you to traverse the results of a SQL query row by row.
 
 ```sql
-DECLARE controle INT DEFAULT 0;
+DECLARE control INT DEFAULT 0;
 
-DECLARE nome_cursor CURSOR FOR consulta;
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET controle = 1;
+DECLARE cursor_name CURSOR FOR query;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET control = 1;
 
-OPEN nome_cursor;
-FETCH nome_cursor INTO varialvel;
+OPEN cursor_name;
+FETCH cursor_name INTO variable;
 
-CLOSE nome_cursor;
+CLOSE cursor_name;
 ```
 
 ```sql
-CREATE PROCEDURE soma_idade(OUT SOMA INT)
+CREATE PROCEDURE sum_age(OUT SUM INT)
 BEGIN
 	DECLARE done INT DEFAULT 0;
-	DECLARE vIdade int;
-	DECLARE cur_aluno CURSOR FOR SELECT idade FROM aluno;
+	DECLARE vAge int;
+	DECLARE cur_student CURSOR FOR SELECT age FROM student;
 	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
-	SET SOMA = 0;
-	OPEN cur_aluno;
-	FETCH cur_aluno INTO vIdade;
+	SET
+
+ SUM = 0;
+	OPEN cur_student;
+	FETCH cur_student INTO vAge;
 	while not (done = 1) do
-		IF vIdade is not null THEN
-			set soma = soma + vIdade;
+		IF vAge is not null THEN
+			set sum = sum + vAge;
 		END IF;
-		FETCH cur_aluno INTO vIdade;
+		FETCH cur_student INTO vAge;
 	END while;
-	CLOSE cur_aluno;
+	CLOSE cur_student;
 END;
 ```
