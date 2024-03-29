@@ -1,50 +1,49 @@
-# Linguagem de Transações (DTL)
+# Transaction Language (DTL)
 
-A Linguagem de Transações (DTL) é fundamental para o gerenciamento de transações em bancos de dados. Ela fornece comandos que permitem aos usuários controlar e gerenciar transações, que são unidades de trabalho que envolvem uma ou mais operações de banco de dados. Os principais comandos DTL incluem:
+Transaction Language (DTL) is essential for managing transactions in databases. It provides commands that allow users to control and manage transactions, which are units of work involving one or more database operations. The main DTL commands include:
 
-- **BEGIN TRANSACTION**: Inicia uma nova transação no banco de dados.
-- **COMMIT**: Confirma e aplica as alterações feitas durante uma transação.
-- **ROLLBACK**: Desfaz e descarta as alterações feitas durante uma transação, restaurando o estado anterior do banco de dados.
+- **BEGIN TRANSACTION**: Initiates a new transaction in the database.
+- **COMMIT**: Confirms and applies the changes made during a transaction.
+- **ROLLBACK**: Undoes and discards the changes made during a transaction, restoring the previous state of the database.
 
-## Importância das Transações
+## Importance of Transactions
 
-As transações são essenciais em bancos de dados para garantir a integridade e consistência dos dados. Elas permitem agrupar um conjunto de operações relacionadas em uma única unidade atômica, garantindo que todas as operações sejam concluídas com sucesso ou revertidas em caso de falha.
+Transactions are essential in databases to ensure data integrity and consistency. They allow grouping a set of related operations into a single atomic unit, ensuring that all operations are either successfully completed or rolled back in case of failure.
 
-## Exemplo Prático
+## Practical Example
 
-Considere um cenário em que precisamos registrar um novo pedido em um sistema de comércio eletrônico e atualizar o estoque de produtos relacionados. Vejamos como usar os comandos DTL para isso:
+Consider a scenario where we need to record a new order in an e-commerce system and update the inventory of related products. Let's see how to use DTL commands for this:
 
 ```sql
--- Iniciar a transação
+-- Begin the transaction
 BEGIN TRANSACTION;
 
--- Registrar o novo pedido na tabela de pedidos
-INSERT INTO pedidos (id_cliente, total) VALUES (123, 50.00);
+-- Record the new order in the orders table
+INSERT INTO orders (customer_id, total) VALUES (123, 50.00);
 
--- Atualizar o estoque dos produtos relacionados ao pedido
-UPDATE produtos SET estoque = estoque - 1 WHERE id_produto = 1;
+-- Update the inventory of products related to the order
+UPDATE products SET stock = stock - 1 WHERE product_id = 1;
 
--- Verificar se há produtos suficientes em estoque
-IF (SELECT estoque FROM produtos WHERE id_produto = 1) >= 0 THEN
-    -- Confirmar a transação
+-- Check if there are enough products in stock
+IF (SELECT stock FROM products WHERE product_id = 1) >= 0 THEN
+    -- Commit the transaction
     COMMIT;
 ELSE
-    -- Desfazer a transação e reverter as alterações
+    -- Roll back the transaction and revert the changes
     ROLLBACK;
 END IF;
 ```
 
-Neste exemplo, começamos uma nova transação com `BEGIN TRANSACTION`. Em seguida, inserimos um novo pedido na tabela de pedidos e atualizamos o estoque do produto relacionado na tabela de produtos. Depois, verificamos se há produtos suficientes em estoque. Se houver estoque suficiente, confirmamos a transação com `COMMIT`, tornando as alterações permanentes. Caso contrário, desfazemos a transação com `ROLLBACK`, revertendo todas as alterações feitas durante a transação para garantir a integridade dos dados.
+In this example, we start a new transaction with `BEGIN TRANSACTION`. Then, we insert a new order into the orders table and update the inventory of the related product in the products table. Next, we check if there are enough products in stock. If there is sufficient stock, we commit the transaction with `COMMIT`, making the changes permanent. Otherwise, we roll back the transaction with `ROLLBACK`, reverting all changes made during the transaction to ensure data integrity.
 
-## Pontos de Melhoria
+## Points for Improvement
 
-1. **Introdução Mais Detalhada**: Expandir a introdução para fornecer mais informações sobre a importância das transações em bancos de dados.
-  
-2. **Explicação Mais Concisa**: Simplificar trechos para tornar a explicação mais direta e fácil de entender.
+1. **More Detailed Introduction**: Expand the introduction to provide more information about the importance of transactions in databases.
+   
+2. **Concise Explanation**: Simplify sections to make the explanation more direct and easy to understand.
 
-3. **Exemplos Adicionais**: Adicionar exemplos extras que abordem diferentes cenários de uso da DTL.
+3. **Additional Examples**: Add extra examples that address different usage scenarios of DTL.
 
-4. **Formatação Consistente**: Garantir que a formatação, como a colocação de palavras-chave em negrito e a indentação do código SQL, seja consistente em toda a documentação.
+4. **Consistent Formatting**: Ensure consistent formatting, such as placing keywords in bold and indenting SQL code, throughout the documentation.
 
-5. **Conclusão ou Resumo**: Incluir uma conclusão ou resumo breve para reiterar os principais pontos e fornecer uma recapitulação para os leitores.
-
+5. **Conclusion or Summary**: Include a brief conclusion or summary to reiterate the main points and provide a recap for readers.
