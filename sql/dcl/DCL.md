@@ -1,120 +1,120 @@
-# Linguagem de Controle de Dados (DCL)
+# Data Control Language (DCL)
 
-A Linguagem de Controle de Dados (DCL) inclui comandos essenciais para definir as permissões de acesso e o controle de segurança no banco de dados. Esses comandos permitem aos administradores de banco de dados controlar quem pode acessar e manipular os dados armazenados, desempenhando um papel fundamental na segurança do banco de dados.
+Data Control Language (DCL) includes essential commands to define access permissions and security control in the database. These commands allow database administrators to control who can access and manipulate the stored data, playing a fundamental role in database security.
 
-Os principais comandos DCL em SQL são:
+The main DCL commands in SQL are:
 
-- **GRANT**: Concede permissões de acesso a usuários ou papéis do banco de dados.
-- **REVOKE**: Revoga permissões de acesso previamente concedidas a usuários ou papéis do banco de dados.
+- **GRANT**: Grants access permissions to users or roles in the database.
+- **REVOKE**: Revokes previously granted access permissions to users or roles in the database.
 
-## Introdução
+## Introduction
 
-Antes de explorar os comandos específicos, é importante entender o papel da Linguagem de Controle de Dados no gerenciamento de banco de dados. A DCL é responsável por definir e regular as permissões de acesso, garantindo que apenas usuários autorizados possam realizar determinadas operações no banco de dados.
+Before exploring the specific commands, it is important to understand the role of Data Control Language in database management. DCL is responsible for defining and regulating access permissions, ensuring that only authorized users can perform certain operations in the database.
 
-## Criação de Usuário
+## User Creation
 
-O comando `CREATE USER` é utilizado para criar um novo usuário no banco de dados, especificando seu nome, host de acesso e senha.
-
-```sql
-CREATE USER '<nome>'@'<host>' IDENTIFIED BY '<senha>';
-```
-
-- `<nome>`: Nome do usuário.
-- `<host>`: Local de acesso permitido.
-- `<senha>`: Senha de acesso.
-
-### Exemplo
+The `CREATE USER` command is used to create a new user in the database, specifying their name, access host, and password.
 
 ```sql
-CREATE USER 'aluno'@'localhost' IDENTIFIED BY '123456';
+CREATE USER '<username>'@'<host>' IDENTIFIED BY '<password>';
 ```
 
-Este exemplo cria um usuário chamado 'aluno' que só pode acessar o banco de dados de localhost, com a senha '123456'.
+- `<username>`: User's name.
+- `<host>`: Allowed access location.
+- `<password>`: Access password.
 
-## Remoção de Usuário
-
-O comando `DROP USER` é utilizado para remover um usuário existente no banco de dados.
+### Example
 
 ```sql
-DROP USER '<nome>'@'<host>';
+CREATE USER 'student'@'localhost' IDENTIFIED BY '123456';
 ```
 
-### Exemplo
+This example creates a user named 'student' who can only access the database from localhost, with the password '123456'.
+
+## User Removal
+
+The `DROP USER` command is used to remove an existing user from the database.
 
 ```sql
-DROP USER 'aluno'@'%';
+DROP USER '<username>'@'<host>';
 ```
 
-Este exemplo remove o usuário 'aluno' de qualquer host.
-
-## Alteração de Usuário
-
-O comando `ALTER USER` permite modificar as propriedades de um usuário existente, como senha e estado da conta.
+### Example
 
 ```sql
-ALTER USER '<nome>'@'<host>' [ALTERAÇÕES];
+DROP USER 'student'@'%';
 ```
 
-### Exemplo
+This example removes the 'student' user from any host.
+
+## User Alteration
+
+The `ALTER USER` command allows modifying the properties of an existing user, such as password and account status.
 
 ```sql
-ALTER USER 'aluno'@'localhost' IDENTIFIED BY 'caderno' PASSWORD EXPIRE;
+ALTER USER '<username>'@'<host>' [MODIFICATIONS];
 ```
 
-Este exemplo altera a senha do usuário 'aluno' e a expira, exigindo que uma nova senha seja definida no próximo login.
+### Example
 
-## Consulta de Usuário
+```sql
+ALTER USER 'student'@'localhost' IDENTIFIED BY 'notebook' PASSWORD EXPIRE;
+```
 
-Para visualizar informações sobre os usuários existentes, pode-se utilizar consultas SQL simples.
+This example changes the password of the 'student' user and expires it, requiring a new password to be set upon the next login.
+
+## User Query
+
+To view information about existing users, simple SQL queries can be used.
 
 ```sql
 SELECT HOST, USER FROM MYSQL.USER;
 ```
 
-Para ver os privilégios de um usuário específico:
+To see the privileges of a specific user:
 
 ```sql
-SHOW GRANTS FOR 'aluno'@'%';
+SHOW GRANTS FOR 'student'@'%';
 ```
 
-## Definindo Privilégios
+## Defining Privileges
 
-O comando `GRANT` é usado para conceder permissões específicas a um usuário em um banco de dados ou tabela.
+The `GRANT` command is used to grant specific permissions to a user on a database or table.
 
 ```sql
-GRANT <privilégio>[(campo_tabela)] ON <nome_db>.<nome_tabela> TO '<usuario>'@'<host>';
+GRANT <privilege>[(table_field)] ON <db_name>.<table_name> TO '<user>'@'<host>';
 ```
 
-### Exemplo
+### Example
 
 ```sql
-GRANT SELECT ON DBTESTE.FUNCIONARIO TO 'aluno'@'%';
+GRANT SELECT ON DBTEST.EMPLOYEE TO 'student'@'%';
 ```
 
-Este exemplo concede ao usuário 'aluno' permissão para selecionar dados da tabela FUNCIONARIO no banco de dados DBTESTE.
+This example grants the 'student' user permission to select data from the EMPLOYEE table in the DBTEST database.
 
-## Revogação de Privilégios
+## Revoking Privileges
 
-O comando `REVOKE` é usado para remover permissões previamente concedidas a um usuário.
+The `REVOKE` command is used to remove previously granted permissions from a user.
 
 ```sql
-REVOKE <privilégio>[(campo_tabela)] ON <nome_db>.<nome_tabela> FROM '<usuario>'@'<host>';
+REVOKE <privilege>[(table_field)] ON <db_name>.<table_name> FROM '<user>'@'<host>';
 ```
 
-### Exemplo
+### Example
 
 ```sql
-REVOKE SELECT ON DBTESTE.FUNCIONARIO FROM 'aluno'@'%';
+REVOKE SELECT ON DBTEST.EMPLOYEE FROM 'student'@'%';
 ```
 
-Este exemplo revoga a permissão de seleção de dados da tabela FUNCIONARIO do usuário 'aluno'.
+This example revokes the data selection permission from the 'student' user for the EMPLOYEE table.
 
-## Atualização de Privilégios
+## Updating Privileges
 
-Após conceder ou revogar privilégios, é necessário atualizar as tabelas de privilégios do servidor para que as alterações tenham efeito.
+After granting or revoking privileges, it is necessary to update the server's privilege tables for the changes to take effect.
 
 ```sql
 FLUSH PRIVILEGES;
 ```
 
-Este comando atualiza a tabela de privilégios do servidor em tempo de execução.
+This command updates the server's privilege table at runtime.
